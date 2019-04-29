@@ -1,0 +1,138 @@
+body {
+	margin: 0;
+	word-break: keep-all;
+	background-color: #ececec;
+	font-family: Arial, "맑은 고딕", "Malgun Gothic", sans-serif;
+}
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 200px;
+	padding: 40px 0 40px 30px;
+	overflow-y: auto;
+	background-color: #fff;
+}
+nav {
+	margin-top: 90px;
+}
+.main-wrapper {
+	position: absolute;
+	top: 0;
+	left: 230px;
+	right: 0;
+	bottom: 0;
+	margin: 0 12px;
+}
+.main-inner {
+	position: relative;
+	margin: 60px auto;
+	max-width: 1160px;
+}
+.contents {
+	margin-bottom: 16px;
+	padding: 66px 54px 140px 54px;
+	background-color: #fff;
+	border-radius: 12px;
+	box-shadow: 1px 5px 9px #ccc;
+}
+.ex {
+	margin-top: 36px;
+	padding: 0 26px 24px 26px;
+	border: 2px solid #ececec;
+	border-radius: 8px;
+}
+footer {
+	margin: 0 auto;
+	padding: 0;
+	max-width: 1160px;
+	height: 100px;
+}
+pre {
+	margin-top: 16px;
+	padding: 24px 34px;
+	border-radius: 6px;
+	background-color: #ececec;
+	white-space: pre-line;
+}
+.ex > pre {
+	padding-left: 26px;
+}
+code {
+	font-family: consolas, "맑은 고딕", "Malgun Gothic", monospace;
+	font-size: 16px;
+	line-height: 1.76em;
+}
+h1 {
+	margin-top: 42px;
+	font-weight: lighter;
+	font-size: 50px;
+	line-height: 1em;
+	color: #777;
+}
+h2 {
+	margin-top: 100px;
+	font-weight: bold;
+	font-size: 30px;
+	line-height: 1.25em;
+	color: #333;
+}
+h3 {
+	margin-top: 46px;
+	font-weight: normal;
+	font-size: 22px;
+	line-height: 1.25em;
+	color: #777;
+}
+ul {
+	padding: 0;
+	list-style: none;
+}
+ol {
+	padding: 0 0 18px 54px;
+}
+li {
+	font-size: 16px;
+	line-height: 2em;
+}
+a {
+	border-bottom: 1.6px solid #1444e1;
+	font-weight: bold;
+	text-decoration: none;
+	color: #1444e1;
+}
+p {
+	margin-bottom: 26px;
+	font-size: 16px;
+	line-height: 1.8em;
+	color: #000;
+}
+.go-back {
+	margin-top: 0;
+	font-size: 14px;
+	line-height: 2em;
+	color: #777;
+}
+nav > ul > li {
+	line-height: 2.5em;
+}
+nav > ul > li > a {
+	border-bottom-color: #9f9f9f;
+	font-weight: normal;
+	color: #777;
+}
+.dropdown {
+	margin-bottom: 26px;
+}
+.dropdown > li > a {
+	border-bottom-color: #525252;
+	color: #444;
+} 
+footer > p {
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 1.76em;
+	color: #777;
+}

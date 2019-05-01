@@ -29,13 +29,22 @@
 						</ul>
 					<li><a href="#arithOp">산술연산자</a></li>
 						<ul class="dropdown">
-							<li><a href="#add">덧셈</a></li>
-							<li><a href="#substract">뺄셈</a></li>
-							<li><a href="#multiply">곱셈</a></li>
-							<li><a href="#divide">나눗셈</a></li>
-							<li><a href="#modulo">나머지</a></li>
-							<li><a href="#exponentiation">거듭제곱</a></li>
+							<li><a href="#addArith">덧셈</a></li>
+							<li><a href="#subtArith">뺄셈</a></li>
+							<li><a href="#multiArith">곱셈</a></li>
+							<li><a href="#divideArith">나눗셈</a></li>
+							<li><a href="#moduloArith">나머지</a></li>
+							<li><a href="#exponentArith">거듭제곱</a></li>
 						</ul>
+					<!--<li><a href="#assignOp">할당연산자</a></li>
+						<ul class="dropdown">
+							<li><a href="#equalAssign">할당</a></li>
+							<li><a href="#addAssign">덧셈 할당</a></li>
+							<li><a href="#subtAssign">뺄셈 할당</a></li>
+							<li><a href="#multiAssign">곱셈 할당</a></li>
+							<li><a href="#divideAssign">나눗셈 할당</a></li>
+							<li><a href="#moduloAssign">나머지 할당</a></li>	
+						</ul>-->
 					<li><a href="#object">객체</a></li>
 						<ul class="dropdown">
 							<li><a href="#property">프로퍼티</a></li>
@@ -88,9 +97,9 @@
 							<code>const name = 'Ujin';
 							const age = 26;
 							const city = 'Seoul';
-							console.log('Hi, My name is', name, '. I'm now', age, '. And I'm from', city, '.');
+							console.log(name, '/', age, '/', city);
 
-							// 'Hi, My name is Ujin . I'm now 26 . And I'm from Seoul .'</code>
+							// 'Ujin/26/Seoul'</code>
 						</pre>
 					</section>
 					<h2 id="variable">변수 Variable</h2>
@@ -105,7 +114,7 @@
 						'Ujin' -> 값;
 						*/</code>
 					</pre>
-					<p>변수를 정의할 때는 정의 키워드(var, let, const), 변수의 이름, 비교연산자 = (assignment operator), 값(value)을 지정합니다. 변수 정의가 완료되었다면 이후 변수는 해당하는 값을 대신 내보냅니다.</p>
+					<p>변수를 정의할 때는 정의 키워드(var, let, const), 변수의 이름, 비교연산자 = (assignment operator), 값(value)을 지정합니다. 변수 정의가 완료되었다면 이후 변수는 해당하는 값을 대신 내보냅니다. 기존에는 변수를 정의하기 위해 var 키워드를 사용했지만, <a href="#specification">ES6 표준명세</a> 이후로 새로 등장한 let, const 키워드를 쓰는 것이 권장됩니다.</p>
 					<p>변수 이름을 지을 때 알아두어야 할 몇 가지 규칙이 있습니다.</p>
 					<ol>
 						<li>변수 이름은 숫자로 시작할 수 없습니다.</li>
@@ -116,20 +125,30 @@
 							<br>키워드는 표준명세에서 약속된 예약어(Resered Words)로, 변수 뿐만아니라 함수(function), 메소드(method), 객체 식별자(object identifier)의 이름으로 가져올 수 없습니다.</li>
 					</ol>
 					<section class="ex">
-						<h3>하나의 객체를 콘솔에 출력하기</h3>
+						<h3>let(var)</h3>
 						<pre>
-							<code>console.log('Hello World'); // 'Hello World'</code>
-						</pre>
-						<p>기존에는 변수를 정의하기 위해 var 키워드를 사용했지만, <a href="#specification">ES6 표준명세</a> 이후로 새로 등장한 let, const 키워드를 쓰는 것이 권장됩니다.</p>
-						<h3>여러개의 객체를 콘솔에 출력하기</h3>
-						<pre>
-							<code>const name = 'Ujin';
-							const age = 26;
-							const city = 'Seoul';
-							console.log('Hi, My name is', name, '. I'm now', age, '. And I'm from', city, '.');
+							<code>let designer = 'Ujin';
+							console.log(designer); // 'Ujin'
+							designer = 'Jiyoung';
+							console.log(designer); // 'Jiyoung'
 
-							// 'Hi, My name is Ujin . I'm now 26 . And I'm from Seoul .'</code>
+							let designer;
+							console.log(designer); // undefined
+							designer = 'Jiyoung'
+							console.log(designer); // 'Jiyoung'
+
+							// var도 let과 동일한 결과를 출력합니다.</code>
 						</pre>
+						<p>let(var)으로 변수를 정의하면 첫 변수값을 지정한 이후에도 (또는 변수값을 아직 지정하지 않은 경우에도) 새 값을 지정할 수 있습니다. 따라서 let(var)으로 변수를 정의한 경우 변수값이 중간에 의도대로 변경되었는지 꼼꼼히 점검해야 합니다.</p>
+						<h3>const</h3>
+						<pre>
+							<code>const designer = 'Ujin';
+							console.log(designer); // 'Ujin'
+							designer = 'Jiyoung'; // TypeError: Assingment to constant variable.
+
+							const designer; // SyntaxError: Missing initializer in const declaration</code>
+						</pre>
+						<p>const로 변수를 정의하면 첫 변수값을 지정한 이후에 새 값을 지정할 수 없고, 반드시 변수에 변수값을 지정해야 합니다. 변수값이 변경되어야 하는 경우가 아니라면 일반적으로 정의 키워드를 const로 사용합니다.</p>
 					</section>
 				</article>
 				<article id="dataTypes" class="contents">
@@ -283,14 +302,14 @@
 					<p>산술연산자(Arithmetic Operators)는 마치 계산기처럼 주로 간단한 숫자 계산을 할 때 사용하는 연산자입니다. 산술연산자는 숫자, 문자열, 또는 변수(variables)를 피연산자(operators)로 넣을 수 있고, 그 결과값을 숫자 또는 문자열로 반환합니다. 피연산자의 타입과 연산자의 종류에 따라 결과값의 타입이 달라집니다. 따라서 연산 전에 피연산자를 미리 <a href="#number">숫자</a>로 변환해두어야 일관적인 결과값을 얻을 수 있습니다.</p>
 					<p>자바스크립트에 내장된 산술 연산자는 총 6가지의 종류가 있습니다.</p>
 						<ol>
-							<li><a href="#add">덧셈 </a>+ add</li>
-							<li><a href="#substract">뺄셈 </a>- substract</li>
-							<li><a href="#multiply">곱셈 </a>* multiply</li>
-							<li><a href="#divide">나눗셈</a> / divide</li>
-							<li><a href="#modulo">나머지</a> % modulo</li>
-							<li><a href="#exponentiation">거듭제곱</a> ** exponentiation</li>
+							<li><a href="#addArith">덧셈 + add</a></li>
+							<li><a href="#subtArith">뺄셈 - subtract</a></li>
+							<li><a href="#multiArith">곱셈 * multiply</a></li>
+							<li><a href="#divideArith">나눗셈 / divide</a></li>
+							<li><a href="#moduloArith">나머지 % modulo</a></li>
+							<li><a href="#exponentArith">거듭제곱 ** exponent</a></li>
 						</ol>
-					<h2 id="add">덧셈 +</h2>
+					<h2 id="addArith">덧셈 +</h2>
 					<pre>
 						<code>0 + 1; // 1 
 						0 + true; // 1 
@@ -301,7 +320,7 @@
 						'Hi' + 'Five'; // 'HiFive'</code>
 					</pre>
 					<p>덧셈은 숫자 뿐만아니라 다양한 데이터 타입끼리의 연산이 가능합니다. 문자열과 숫자를 연결할 때(Concatenation) 또는 문자열끼리 연결할 때, 그리고 진리값끼리 연산할 때에도 덧셈을 사용할 수 있습니다.</p>
-					<h2 id="substract">뺄셈 -</h2>
+					<h2 id="subtArith">뺄셈 -</h2>
 					<pre>
 						<code>0 - 1; // -1 
 						0 - true; // -1 
@@ -312,7 +331,7 @@
 						'HiFive' - 'Five'; // NaN</code>
 					</pre>
 					<p>뺄셈은 데이터끼리의 차이를 출력합니다. 덧셈을 제외한 나머지 산술연산에서는 문자열을 포함한 결과값이 NaN으로 출력됩니다.</p>
-					<h2 id="multiply">곱셈 *</h2>
+					<h2 id="multiArith">곱셈 *</h2>
 					<pre>
 						<code>1 * 2; // 2
 						1 * -2; // -2
@@ -320,7 +339,7 @@
 						Infinity * 0; // NaN
 						Infinity * Infinity; // Infinity</code>
 					</pre>
-					<h2 id="divide">나눗셈 /</h2>
+					<h2 id="divideArith">나눗셈 /</h2>
 					<pre>
 						<code>1 / 2; // 0.5
 						1.0 / 2.0; // 0.5
@@ -329,7 +348,7 @@
 						2.0 / 0.0; // Infinity
 						2 / -0; // -Infinity</code>
 					</pre>
-					<h2 id="modulo">나머지 %</h2>
+					<h2 id="moduloArith">나머지 %</h2>
 					<pre>
 						<code>12 % 5; // 2
 						1 % 2; // 1	
@@ -342,7 +361,7 @@
 						NaN % 2; // NaN
 						5.5 % 2; // 1.5</code>
 					</pre>
-					<h2 id="exponentiation">거듭제곱 **</h2>
+					<h2 id="exponentArith">거듭제곱 **</h2>
 					<pre>
 						<code>12 % 5; // 2
 						1 % 2; // 1	
@@ -356,6 +375,97 @@
 						5.5 % 2; // 1.5</code>
 					</pre>
 				</article>
+				<!--<article id="assignOp" class="contents">
+					<h1>할당연산자</h1>
+					<pre>
+						<code>let a = 10;
+						let b = 20;
+						let c = 100;
+						let d = 2000;
+						let e = 45;
+
+						a += 5; // 15
+						b -= 30; // -10
+						c *= 8; // 800
+						d /= 50; // 40
+						e %= 8; // 5</code>
+					</pre>
+					<p>할당연산자(Assignment Operators)는 연산자 기준으로 오른쪽 피연산자의 값을 왼쪽의 피연산자에 할당합니다.</p>
+					<p>기본적으로 사용되는 할당 연산자는 총 6가지의 종류가 있습니다.</p>
+						<ol>
+							<li><a href="#equalAssign">할당 = assignment</a></li>
+							<li><a href="#addAssign">덧셈 할당 += addition assignment</a></li>
+							<li><a href="#subtAssign">뺄셈 할당 -= subtraction assignment</a></li>
+							<li><a href="#multiAssign">곱셈 할당 *= multiply assignment</a></li>
+							<li><a href="#divideAssign">나눗셈 할당 /= divide assignment</a></li>
+							<li><a href="#moduloAssign">나머지 할당 %= modulo assignment</a></li>	
+						</ol>
+					<h2 id="equalAssign">할당</h2>
+					<pre>
+						<code>0 + 1; // 1 
+						0 + true; // 1 
+						false + false; // 0 
+
+						'Hi' + 5; // 'Hi5'
+						'Hi' + false; // 'Hifalse'
+						'Hi' + 'Five'; // 'HiFive'</code>
+					</pre>
+					<p>덧셈은 숫자 뿐만아니라 다양한 데이터 타입끼리의 연산이 가능합니다. 문자열과 숫자를 연결할 때(Concatenation) 또는 문자열끼리 연결할 때, 그리고 진리값끼리 연산할 때에도 덧셈을 사용할 수 있습니다.</p>
+					<h2 id="addAssign">덧셈 할당</h2>
+					<pre>
+						<code>0 - 1; // -1 
+						0 - true; // -1 
+						true - false; // 1 
+
+						'Hi5' - 5; // NaN
+						'Hifalse' - false; // NaN
+						'HiFive' - 'Five'; // NaN</code>
+					</pre>
+					<p>뺄셈은 데이터끼리의 차이를 출력합니다. 덧셈을 제외한 나머지 산술연산에서는 문자열을 포함한 결과값이 NaN으로 출력됩니다.</p>
+					<h2 id="subtAssign">뺄셈 할당</h2>
+					<pre>
+						<code>1 * 2; // 2
+						1 * -2; // -2
+						1 * 0; // 0
+						Infinity * 0; // NaN
+						Infinity * Infinity; // Infinity</code>
+					</pre>
+					<h2 id="multiAssign">곱셈 할당</h2>
+					<pre>
+						<code>1 / 2; // 0.5
+						1.0 / 2.0; // 0.5
+						0 / 2; // 0
+						2 / 0; // Infinity
+						2.0 / 0.0; // Infinity
+						2 / -0; // -Infinity</code>
+					</pre>
+					<h2 id="divideAssign">나눗셈 할당</h2>
+					<pre>
+						<code>12 % 5; // 2
+						1 % 2; // 1	
+						-1 % 2; // -1
+						1 % -2; // 1
+						2 % 2; // 0
+						-2 % 2; // -0
+						0 % 2; // 0
+						2 % 0; // NaN
+						NaN % 2; // NaN
+						5.5 % 2; // 1.5</code>
+					</pre>
+					<h2 id="moduloAssign">나머지 할당</h2>
+					<pre>
+						<code>12 % 5; // 2
+						1 % 2; // 1	
+						-1 % 2; // -1
+						1 % -2; // 1
+						2 % 2; // 0
+						-2 % 2; // -0
+						0 % 2; // 0
+						2 % 0; // NaN
+						NaN % 2; // NaN
+						5.5 % 2; // 1.5</code>
+					</pre>
+				</article>-->
 				<article id="object" class="contents">
 					<h1>객체</h1>
 					<p>객체(object)는 마치 컨테이너 박스처럼 한꺼번에 여러 값을 담을 수 있는 구조를 지닌 데이터 타입입니다. 객체는 상당히 많은 기능을 갖고있기 때문에, 자바스크립트의 여러 기능들을 다루기 위해서는 객체에 대해 잘 알고있어야 합니다.</p>

@@ -12,12 +12,12 @@ body {
 	bottom: 0;
 	margin: 0 12px;
 }
-.main-inner {
+.main-content {
 	position: relative;
 	margin: 60px auto;
 	max-width: 1160px;
 }
-.contents {
+.content-box {
 	margin-bottom: 16px;
 	padding: 66px 54px 140px 54px;
 	background-color: #fff;

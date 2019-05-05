@@ -1,525 +1,672 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html" charset="utf-8">
-		<title>Intro | JavaScript</title>
-		<link rel="stylesheet" href="styles/common.css">
-	</head>
-	<body>
-		<header>
-			<p class="go-back"><a href="index.html">← HOME</a></p>
-			<nav id="menu">
-				<ul>
-					<li><a href="#intro">자바스크립트 소개</a></li>
-						<ul class="dropdown">
-							<li><a href="#specification">표준 명세</a></li>
-						</ul>
-					<li><a href="#tutorial">튜토리얼</a></li>
-						<ul class="dropdown">
-							<li><a href="#comments">주석</a></li>
-							<li><a href="#console">콘솔</a></li>
-							<li><a href="#variable">변수</a></li>
-						</ul>
-					<li><a href="#dataTypes">데이터 타입</a></li>
-						<ul class="dropdown">
-							<li><a href="#number">숫자</a></li>
-							<li><a href="#string">문자열</a></li>
-							<li><a href="#boolean">불리언</a></li>
-							<li><a href="#nullUndefined">빈값</a></li>
-						</ul>
-					<li><a href="#arithOp">산술연산자</a></li>
-						<ul class="dropdown">
-							<li><a href="#addArith">덧셈</a></li>
-							<li><a href="#subtArith">뺄셈</a></li>
-							<li><a href="#multiArith">곱셈</a></li>
-							<li><a href="#divideArith">나눗셈</a></li>
-							<li><a href="#moduloArith">나머지</a></li>
-							<li><a href="#exponentArith">거듭제곱</a></li>
-						</ul>
-					<!--<li><a href="#assignOp">할당연산자</a></li>
-						<ul class="dropdown">
-							<li><a href="#equalAssign">할당</a></li>
-							<li><a href="#addAssign">덧셈 할당</a></li>
-							<li><a href="#subtAssign">뺄셈 할당</a></li>
-							<li><a href="#multiAssign">곱셈 할당</a></li>
-							<li><a href="#divideAssign">나눗셈 할당</a></li>
-							<li><a href="#moduloAssign">나머지 할당</a></li>	
-						</ul>-->
-					<li><a href="#object">객체</a></li>
-						<ul class="dropdown">
-							<li><a href="#property">프로퍼티</a></li>
-							<li><a href="#methods">메소드</a></li>
-							<li><a href="#built-inObj">내장 객체</a></li>
-						</ul>
-				</ul>
-			</nav>
-		</header>
-		<div class="main-wrapper">
-			<main class="main-inner" role="main">
-				<article id="intro" class="contents">
-					<h1>자바스크립트 소개</h1>
-					<p>자바스크립트(JavaScript)는 1995년 Netscape Navigator라는 웹 브라우저에 탑재되어 처음 공개되었습니다. 자바스크립트는 다른 프로그래밍 언어에 비해 적은 양의 기능을 포함하고 있지만, 웹 브라우저, 웹 서버, 게임 엔진, <a href="https://helpx.adobe.com/kr/photoshop/using/scripting.html" target="_blank">어도비 프로그램</a> 등 다양한 구동 환경과 조합하여 유용한 기능들과 응용 프로그램을 만들 수 있습니다.</p>
-					<h2 id="specification">표준 명세 Standard Specification</h2>
-					<p>표준 명세(Standard Specification)는 프로그래밍 언어의 문법 및 기능을 상세하게 정의한 일종의 프로그래밍 언어 사전입니다. 자바스크립트의 표준 명세인 ECMAScript(ES)는 1997년에 처음 제정되었고, 2015년에 제정된 ES2015(ES6)이후 표준 명세가 빠르게 업데이트 되고있습니다. 초기의 자바스크는 웹 브라우저 간 표준문법 및 기능이 매우 달라 브라우저 간 호환성이 낮았기 때문에 잘 사용되지 않았습니다. 그러나 1999년 ES3, 2009년 ES5가 나오면서 차츰 호환성 문제가 해결되고, 새로운 문법과 기능들이 추가되면서 자바스크립트의 활용도가 이전보다 훨씬 높아지면서 재조명되기 시작했습니다.
-					</p>
-					<ul>
-						<li><a href="https://developer.mozilla.org/ko/docs/A_re-introduction_to_JavaScript">MDN의 자바스크립트 입문하기(한국어)</a></li>
-						<li><a href="http://kangax.github.io/compat-table/es2016plus/" target="_blank">브라우저별 자바스크립트 지원 기능 확인하기</a></li>
-						<li><a href="https://tc39.github.io/ecma262/" target="_blank">자바스크립트의 최신 표준 명세 보러가기</a></li>
-					</ul>
-				</article>
-				<article id="tutorial" class="contents">
-					<h1>튜토리얼</h1>
-					<h2 id="comments">주석 Comments</h2>
-					<pre>
-						<code>// 이 주석은 한 줄을 작동에서 제외시킵니다.
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Intro | JavaScript</title>
+    <link rel="stylesheet" href="styles/common-compressed.css">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#">HOME</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="sidebar">
+      <ul>
+        <li class="menu-top"><a href="#intro">자바스크립트 소개</a></li>
+          <li class="menu-dropdown"><a href="#specification">표준 명세</a></li>
+        <li class="menu-top"><a href="#tutorial">튜토리얼</a></li>
+          <li class="menu-dropdown"><a href="#comments">주석</a></li>
+          <li class="menu-dropdown"><a href="#console">콘솔</a></li>
+          <li class="menu-dropdown"><a href="#variable">변수</a></li>
+        <li class="menu-top"><a href="#dataTypes">데이터 타입</a></li>
+          <li class="menu-dropdown"><a href="#number">숫자</a></li>
+          <li class="menu-dropdown"><a href="#string">문자열</a></li>
+          <li class="menu-dropdown"><a href="#boolean">불리언</a></li>
+          <li class="menu-dropdown"><a href="#nullUndefined">빈값</a></li>
+        <li class="menu-top"><a href="#operators">연산자</a></li>
+          <li class="menu-dropdown"><a href="#arithmeticOp">산술연산자</a></li>
+          <li class="menu-dropdown"><a href="#assignmentOp">할당연산자</a></li>
+          <li class="menu-dropdown"><a href="#comparisonOp">비교연산자</a></li>
+          <li class="menu-dropdown"><a href="#logicalOp">논리연산자</a></li>
+        <li class="menu-top"><a href="#object">객체</a></li>
+          <li class="menu-dropdown"><a href="#property">프로퍼티</a></li>
+          <li class="menu-dropdown"><a href="#methods">메소드</a></li>
+          <li class="menu-dropdown"><a href="#built-inObj">내장 객체</a></li>
+        <li class="menu-top"><a href="#conditionalStm">조건문</a></li>
+          <li class="menu-dropdown"><a href="#ifElse">if & else</a></li>
+          <li class="menu-dropdown"><a href="#switch">switch</a></li>
+      </ul>
+    </div>
+    <div class="main-wrapper">
+      <main class="main-content">
+        <article id="intro">
+          <h1>자바스크립트 소개</h1>
+          <p>자바스크립트(JavaScript)는 1995년 Netscape Navigator라는 웹 브라우저에 탑재되어 처음 공개되었습니다. 자바스크립트는 다른 프로그래밍 언어에 비해 적은 양의 기능을 포함하고 있지만, 웹 브라우저, 웹 서버, 게임 엔진, <a href="https://helpx.adobe.com/kr/photoshop/using/scripting.html" target="_blank">어도비 프로그램</a> 등 다양한 구동 환경과 조합하여 유용한 기능들과 응용 프로그램을 만들 수 있습니다.</p>
+          <h2 id="specification">표준 명세 Standard Specification</h2>
+          <p>표준 명세(Standard Specification)는 프로그래밍 언어의 문법 및 기능을 상세하게 정의한 일종의 프로그래밍 언어 사전입니다. 자바스크립트의 표준 명세인 ECMAScript(ES)는 1997년에 처음 제정되었고, 2015년에 제정된 ES2015(ES6)이후 표준 명세가 빠르게 업데이트 되고있습니다. 초기의 자바스크는 웹 브라우저 간 표준문법 및 기능이 매우 달라 브라우저 간 호환성이 낮았기 때문에 잘 사용되지 않았습니다. 그러나 1999년 ES3, 2009년 ES5가 나오면서 차츰 호환성 문제가 해결되고, 새로운 문법과 기능들이 추가되면서 자바스크립트의 활용도가 이전보다 훨씬 높아지면서 재조명되기 시작했습니다.
+          </p>
+          <ul>
+            <li><a href="https://developer.mozilla.org/ko/docs/A_re-introduction_to_JavaScript">MDN의 자바스크립트 입문하기(한국어)</a></li>
+            <li><a href="http://kangax.github.io/compat-table/es2016plus/" target="_blank">브라우저별 자바스크립트 지원 기능 확인하기</a></li>
+            <li><a href="https://tc39.github.io/ecma262/" target="_blank">자바스크립트의 최신 표준 명세 보러가기</a></li>
+          </ul>
+        </article>
+        <article id="tutorial">
+          <h1>튜토리얼</h1>
+          <h2 id="comments">주석 Comments</h2>
+          <pre>
+            <code>
+              // 이 주석은 한 줄을 작동에서 제외시킵니다.
 
-						/*
-						이 주석은 여러 줄을 작동에서 제외시킵니다.
-						이렇게요.
-						*/
+              /*
+              이 주석은 여러 줄을 작동에서 제외시킵니다.
+              이렇게요.
+              */
 
-						하나의 문장에서 /*이 부분만*/ 작동에서 제외시키고 싶을 때에도 쓸 수 있습니다.</code>
-					</pre>
-					<p>자바스크립트에서 주석 처리된 코드는 실제로 작동하지 않지만 사람들은 브라우저 검사기(Inspector)나 코드 공유를 할 때 주석을 읽을 수 있습니다. 특히 접근이 쉬운 HTML 파일 안에 <'script'> 태그로 자바스크립트를 작성한다면 브라우저 검사기를 통해 일반 유저도 쉽게 주석을 볼 수 있습니다.</p>
-					<h2 id="console">콘솔 Console</h2>
-					<pre>
-						<code>console.log();</code>
-					</pre>
-					<p>console.log();는 코드의 데이터와 액션을 모두 포함해 정의하는 객체(object)를 <a href="https://developers.google.com/web/tools/chrome-devtools/console/" target="_blank">브라우저의 Console 창</a>에 출력해서 보여줍니다.</p>
-					<section class="ex">
-						<h3>하나의 객체를 콘솔에 출력하기</h3>
-						<pre>
-							<code>console.log('Hello World'); // 'Hello World'</code>
-						</pre>
-						<h3>여러개의 객체를 콘솔에 출력하기</h3>
-						<pre>
-							<code>const name = 'Ujin';
-							const age = 26;
-							const city = 'Seoul';
-							console.log(name, '/', age, '/', city);
+              하나의 문장에서 /*이 부분만*/ 작동에서 제외시키고 싶을 때에도 쓸 수 있습니다.</code>
+          </pre>
+          <p>자바스크립트에서 주석 처리된 코드는 실제로 작동하지 않지만 사람들은 브라우저 검사기(Inspector)나 코드 공유를 할 때 주석을 읽을 수 있습니다. 특히 접근이 쉬운 HTML 파일 안에 script 태그로 자바스크립트를 작성한다면 브라우저 검사기를 통해 일반 유저도 쉽게 주석을 볼 수 있습니다.</p>
+          <h2 id="console">콘솔 Console</h2>
+          <pre>
+            <code>
+              console.log();</code>
+          </pre>
+          <p>console.log();는 코드의 데이터와 액션을 모두 포함해 정의하는 객체(object)를 <a href="https://developers.google.com/web/tools/chrome-devtools/console/" target="_blank">브라우저의 Console 창</a>에 출력해서 보여줍니다.</p>
+          <section class="ex">
+            <h3>하나의 객체를 콘솔에 출력하기</h3>
+            <pre>
+              <code>
+                console.log('Hello World'); // 'Hello World'</code>
+            </pre>
+            <h3>여러개의 객체를 콘솔에 출력하기</h3>
+            <pre>
+              <code>
+                const name = 'Ujin';
+                const age = 26;
+                const city = 'Seoul';
+                console.log(name, '/', age, '/', city);
 
-							// 'Ujin/26/Seoul'</code>
-						</pre>
-					</section>
-					<h2 id="variable">변수 Variable</h2>
-					<pre>
-						<code>var myName = 'Ujin';
-						console.log(myName); // 'Ujin'
+                // 'Ujin/26/Seoul'</code>
+            </pre>
+          </section>
+          <h2 id="variable">변수 Variable</h2>
+          <pre>
+            <code>
+              var myName = 'Ujin';
+              console.log(myName); // 'Ujin'
 
-						/*
-						var, let, const -> 정의 키워드;
-						myName -> 변수 이름 (다음 단어는 대문자로);
-						= -> 비교연산자;
-						'Ujin' -> 값;
-						*/</code>
-					</pre>
-					<p>변수를 정의할 때는 정의 키워드(var, let, const), 변수의 이름, 비교연산자 = (assignment operator), 값(value)을 지정합니다. 변수 정의가 완료되었다면 이후 변수는 해당하는 값을 대신 내보냅니다. 기존에는 변수를 정의하기 위해 var 키워드를 사용했지만, <a href="#specification">ES6 표준명세</a> 이후로 새로 등장한 let, const 키워드를 쓰는 것이 권장됩니다.</p>
-					<p>변수 이름을 지을 때 알아두어야 할 몇 가지 규칙이 있습니다.</p>
-					<ol>
-						<li>변수 이름은 숫자로 시작할 수 없습니다.</li>
-						<li>변수 이름 안의 대문자와 소문자를 분명히 구분해야 합니다.
-							<br>같은 변수 이름에 소문자와 대문자를 다르게 적으면 다른 변수 이름으로 인식됩니다.</li>
-						<li>변수 이름의 첫 단어 이후 다음 단어들은 첫 글자를 대문자로 적어줍니다. <a href="http://guswnsxodlf.github.io/camelcase-pascalcase-snakecase" target="_blank">(camel casing)</a></li>
-						<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords" target="_blank">키워드</a>는 변수 이름으로 쓸 수 없습니다.
-							<br>키워드는 표준명세에서 약속된 예약어(Resered Words)로, 변수 뿐만아니라 함수(function), 메소드(method), 객체 식별자(object identifier)의 이름으로 가져올 수 없습니다.</li>
-					</ol>
-					<section class="ex">
-						<h3>let(var)</h3>
-						<pre>
-							<code>let designer = 'Ujin';
-							console.log(designer); // 'Ujin'
-							designer = 'Jiyoung';
-							console.log(designer); // 'Jiyoung'
+              /*
+              var, let, const -> 정의 키워드;
+              myName -> 변수 이름 (다음 단어는 대문자로);
+              = -> 비교연산자;
+              'Ujin' -> 값;
+              */</code>
+          </pre>
+          <p>변수를 정의할 때는 정의 키워드(var, let, const), 변수의 이름, 비교연산자 = (assignment operator), 값(value)을 지정합니다. 변수 정의가 완료되었다면 이후 변수는 해당하는 값을 대신 내보냅니다. 기존에는 변수를 정의하기 위해 var 키워드를 사용했지만, <a href="#specification">ES6 표준명세</a> 이후로 새로 등장한 let, const 키워드를 쓰는 것이 권장됩니다.</p>
+          <p>변수 이름을 지을 때 알아두어야 할 몇 가지 규칙이 있습니다.</p>
+          <ol>
+            <li>변수 이름은 숫자로 시작할 수 없습니다.</li>
+            <li>변수 이름 안의 대문자와 소문자를 분명히 구분해야 합니다.<br>같은 변수 이름에 소문자와 대문자를 다르게 적으면 다른 변수 이름으로 인식됩니다.</li>
+            <li>변수 이름의 첫 단어 이후 다음 단어들은 첫 글자를 대문자로 적어줍니다. <a href="http://guswnsxodlf.github.io/camelcase-pascalcase-snakecase" target="_blank">(camel casing)</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords" target="_blank">키워드</a>는 변수 이름으로 쓸 수 없습니다.<br>키워드는 표준명세에서 약속된 예약어(Resered Words)로, 변수 뿐만아니라 함수(function), 메소드(method), 객체 식별자(object identifier)의 이름으로 가져올 수 없습니다.</li>
+          </ol>
+          <section class="ex">
+            <h3>var</h3>
+            <pre>
+              <code>
+                var designer = 'Ujin';
+                console.log(designer); // 'Ujin'
+                var designer = 'Jiyoung';
+                console.log(designer); // 'Jiyoung'
 
-							let designer;
-							console.log(designer); // undefined
-							designer = 'Jiyoung'
-							console.log(designer); // 'Jiyoung'
+                var designer;
+                console.log(designer); // undefined
+                var designer = 'Jiyoung'
+                console.log(designer); // 'Jiyoung'</code>
+            </pre>
+            <p>var로 변수를 정의하면 첫 변수값을 지정한 이후에도 (또는 변수값을 아직 지정하지 않은 경우에도) 새 값을 지정할 수 있습니다. 따라서 var로 변수를 정의한 경우 변수값이 중간에 의도대로 변경되었는지 꼼꼼히 점검해야 합니다.</p>
+            <h3>let</h3>
+            <pre>
+              <code>
+                let designer = 'Ujin';
+                console.log(designer); // 'Ujin'
+                designer = 'Jiyoung';
+                console.log(designer); // 'Jiyoung'
 
-							// var도 let과 동일한 결과를 출력합니다.</code>
-						</pre>
-						<p>let(var)으로 변수를 정의하면 첫 변수값을 지정한 이후에도 (또는 변수값을 아직 지정하지 않은 경우에도) 새 값을 지정할 수 있습니다. 따라서 let(var)으로 변수를 정의한 경우 변수값이 중간에 의도대로 변경되었는지 꼼꼼히 점검해야 합니다.</p>
-						<h3>const</h3>
-						<pre>
-							<code>const designer = 'Ujin';
-							console.log(designer); // 'Ujin'
-							designer = 'Jiyoung'; // TypeError: Assingment to constant variable.
+                let designer;
+                console.log(designer); // undefined
+                designer = 'Jiyoung'
+                console.log(designer); // 'Jiyoung'
 
-							const designer; // SyntaxError: Missing initializer in const declaration</code>
-						</pre>
-						<p>const로 변수를 정의하면 첫 변수값을 지정한 이후에 새 값을 지정할 수 없고, 반드시 변수에 변수값을 지정해야 합니다. 변수값이 변경되어야 하는 경우가 아니라면 일반적으로 정의 키워드를 const로 사용합니다.</p>
-					</section>
-				</article>
-				<article id="dataTypes" class="contents">
-					<h1>데이터 타입</h1>
-					<p>자바스크립트는 데이터 타입(Data Types)을 기본적으로 7개로 분류합니다.</p>
-						<ol>
-							<li><a href="#number">숫자 number</a></li>
-							<li><a href="#string">문자열 string</a></li>
-							<li><a href="#boolean">불리언 boolean</a></li>
-							<li><a href="#nullUndefined">미존재 null</a></li>
-							<li><a href="#nullUndefined">미정의 undefined</a></li>
-							<li>심볼 symbol</li>
-							<li>객체 object</li>
-						</ol>
-					<pre>
-						<code>typeof 1; // number
-							typeof 'hello'; // string
-							typeof true; // boolean
-							typeof null; // object
-							typeof undefined; // undefined</code>
-					</pre>
-					<p>연산자 typeof는 뒤에 변수를 넣으면 변수의 데이터 타입을 출력합니다. 이 코드에서 typeof는 자바스크립트에 내장된 키워드(Keyword)입니다.</p>
-					<h2 id="number">숫자 Number</h2>
-					<pre>
-						<code>1, 1516, 23.42, -7, 0</code>
-					</pre>
-					<p>숫자는 정수, 실수, 0, -0을 포함한 수입니다. 문자열의 형태를 지녔지만 숫자의 개념을 다루는 NaN(Not a Number), Infinity, -Infinity도 숫자 타입입니다.</p>
-					<section class="ex">
-						<h3>데이터를 숫자 or 정수로 변환하기</h3>
-						<pre>
-							<code>const x = '1';
-							const y = '2.019';
-							const z = '3a';
+                let designer = 'Ujin';
+                console.log(designer);
+                let designer = 'Jiyoung';
+                console.log(designer);
+                // SyntaxError: Identifier 'designer' has already been declared</code>
+            </pre>
+            <p>let도 변수를 정의하면 첫 변수값을 지정한 이후에도 (또는 변수값을 아직 지정하지 않은 경우에도) 새 값을 지정할 수 있습니다. 그러나 let은 변수값을 다시 지정할 때 var과 달리 변수 앞에 let 키워드를 쓰지 않습니다.</p>
+            <h3>const</h3>
+            <pre>
+              <code>
+                const designer = 'Ujin';
+                console.log(designer); // 'Ujin'
+                designer = 'Jiyoung'; // TypeError: Assingment to constant variable.
 
-							x + y + z; // 12.0193a
+                const designer; // SyntaxError: Missing initializer in const declaration</code>
+            </pre>
+            <p>const로 변수를 정의하면 첫 변수값을 지정한 이후에 새 값을 지정할 수 없고, 반드시 변수에 변수값을 지정해야 합니다. 변수값이 변경되어야 하는 경우가 아니라면 일반적으로 정의 키워드를 const로 사용합니다.</p>
+          </section>
+        </article>
+        <article id="dataTypes">
+          <h1>데이터 타입</h1>
+          <p>자바스크립트는 데이터 타입(Data Types)을 기본적으로 7개로 분류합니다.</p>
+          <ol>
+            <li><a href="#number">숫자 number</a></li>
+            <li><a href="#string">문자열 string</a></li>
+            <li><a href="#boolean">불리언 boolean</a></li>
+            <li><a href="#nullUndefined">미존재 null</a></li>
+            <li><a href="#nullUndefined">미정의 undefined</a></li>
+            <li>심볼 symbol</li>
+            <li>객체 object</li>
+          </ol>
+          <pre>
+            <code>
+              typeof 1; // number
+              typeof 'hello'; // string
+              typeof true; // boolean
+              typeof null; // object
+              typeof undefined; // undefined</code>
+          </pre>
+          <p>연산자 typeof는 뒤에 변수를 넣으면 변수의 데이터 타입을 출력합니다. 이 코드에서 typeof는 자바스크립트에 내장된 키워드(Keyword)입니다.</p>
+          <h2 id="number">숫자 Number</h2>
+          <pre>
+            <code>
+              1, 1516, 23.42, -7, 0</code>
+          </pre>
+          <p>숫자는 정수, 실수, 0, -0을 포함한 수입니다. 문자열의 형태를 지녔지만 숫자의 개념을 다루는 NaN(Not a Number), Infinity, -Infinity도 숫자 타입입니다.</p>
+          <section class="ex">
+            <h3>데이터를 숫자 or 정수로 변환하기</h3>
+            <pre>
+              <code>
+                const x = '1';
+                const y = '2.019';
+                const z = '3a';
 
-							Number(y); // 2.019
-							parseInt(y); // 2
+                x + y + z; // 12.0193a
 
-							Number(z); // NaN
-							parseInt(z); // 3
-							</code>
-						</pre>
-						<p>Number()와 parseInt()는 데이터의 맨 앞 글자부터 데이터를 숫자로 변환합니다. 데이터에 문자열이 포함되어 있다면 Number()는 NaN을 출력하지만, parseInt()는 문자열을 제외시킨 뒤 정수를 출력합니다.</p>
-					</section>
-					<h2 id="string">문자열 String</h2>
-					<pre>
-						<code>'This is String!', '문자열은', "이러한 형태입니다."</code>
-					</pre>
-					<p>문자열은 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Text_formatting" target="_blank">'...'(Single Quotes) 또는 "..."(Double Quotes)</a> 안에 둘러싸인 모든 글자, 숫자, 공백, 심볼 등을 포함합니다. Console.log로 문자열을 출력하면 '...'로 출력됩니다.</p>
-					<section class="ex">
-						<h3>데이터를 문자열로 변환하기</h3>
-						<pre>
-							<code>const x = 1;
-							const y = 2;
+                Number(y); // 2.019
+                parseInt(y); // 2
 
-							x + y; // 3
-							String(x) + String(y); // 12</code>
-						</pre>
-						<h3>문자열의 길이(글자 개수) 출력하기</h3>
-						<pre>
-							<code>const weather = '2019.04.14 Today: 날씨 맑음!!'
+                Number(z); // NaN
+                parseInt(z); // 3</code>
+            </pre>
+            <p>Number()와 parseInt()는 데이터의 맨 앞 글자부터 데이터를 숫자로 변환합니다. 데이터에 문자열이 포함되어 있다면 Number()는 NaN을 출력하지만, parseInt()는 문자열을 제외시킨 뒤 정수를 출력합니다.</p>
+          </section>
+          <h2 id="string">문자열 String</h2>
+          <pre>
+            <code>
+              'This is String!', '문자열은', "이러한 형태입니다."</code>
+          </pre>
+          <p>문자열은 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Text_formatting" target="_blank">'...'(Single Quotes) 또는 "..."(Double Quotes)</a> 안에 둘러싸인 모든 글자, 숫자, 공백, 심볼 등을 포함합니다. Console.log로 문자열을 출력하면 '...'로 출력됩니다.</p>
+          <section class="ex">
+            <h3>데이터를 문자열로 변환하기</h3>
+            <pre>
+              <code>
+                const x = 1;
+                const y = 2;
 
-							weather.length; // 25</code>
-						</pre>
-						<h3>문자열의 글자와 관련된 데이터 출력하기</h3>
-						<pre>
-							<code>const weather = '2019.04.14 Today: 날씨 맑음!!'
+                x + y; // 3
+                String(x) + String(y); // 12</code>
+            </pre>
+            <h3>문자열의 길이(글자 개수) 출력하기</h3>
+            <pre>
+              <code>
+                const weather = '2019.04.14 Today: 날씨 맑음!!'
 
-							weather.toUpperCase(); // '2019.04.14 TODAY: 날씨 맑음!!'
-							weather.startsWith('2019.04'); // true</code>
-						</pre>	
-						<h3>문자열의 순서와 관련된 데이터 출력하기</h3>
-						<pre>
-							<code>const weather = '2019.04.14 Today: 날씨 맑음!!'
+                weather.length; // 25</code>
+            </pre>
+            <h3>문자열의 글자와 관련된 데이터 출력하기</h3>
+            <pre>
+              <code>
+                const weather = '2019.04.14 Today: 날씨 맑음!!'
 
-							weather.charAt(6); // 4
-							weather.indexOf('날'); // 18
-							weather.substring(0, 4); // 2019</code>
-						</pre>	
-						<h3><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Text_formatting" target="_blank">문자열 반환 & 문장 나누기</a>(String Substitutuions & Multi-line Strings)</h3>
-						<pre>
-							<code>const name = 'Jiyeong';
-							const age = 37;
-							const city = 'Busan';
-							console.log('Hi, My name is %s.\n\I'm now %d. \n\ And I'm from %s.', name, age, city);
+                weather.toUpperCase(); // '2019.04.14 TODAY: 날씨 맑음!!'
+                weather.startsWith('2019.04'); // true</code>
+            </pre>  
+            <h3>문자열의 순서와 관련된 데이터 출력하기</h3>
+            <pre>
+              <code>
+                const weather = '2019.04.14 Today: 날씨 맑음!!'
 
-							/* 
-							'Hi, My name is Jiyeong. 
-							I'm now 37. 
-							And I'm from Busan.'
-							*/</code>
-						</pre>
-						<h3><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals" target="_blank">템플릿 문자열</a>(Template Literals)로 문자열 반환 & 문장 나누기</h3>
-						<pre>
-							<code>const name = 'Jiyeong';
-							const age = 37;
-							const city = 'Busan';
-							console.log(`Hi, My name is ${name}. 
-							I'm ${age} now. 
-							And I'm from ${city}.`);
+                weather.charAt(6); // 4
+                weather.indexOf('날'); // 18
+                weather.substring(0, 4); // 2019</code>
+            </pre>  
+            <h3><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals" target="_blank">템플릿 문자열</a> Template Literals</h3>
+            <pre>
+              <code>
+                const name = 'Jiyeong';
+                const age = 37;
+                const city = 'Busan';
+                console.log(`Hi, My name is ${name}. 
+                I'm ${age} now. 
+                And I'm from ${city}.`);
 
-							/*
-							'Hi, My name is Jiyeong. 
-							I'm now 37. 
-							And I'm from Busan.'
-							*/</code>
-						</pre>
-					</section>
-					<h2 id="boolean">불리언 Boolean</h2>
-					<pre>
-						<code>1 == 1 // true
-						1 == 2 // false</code>
-					</pre>
-					<p>불리언은 데이터에 대한 조건이 참 또는 거짓(true or false, yes or no)을 나타냅니다. 이 조건을 불리언값 또는 진리값이라 부릅니다. 주로 <a href="https://https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators" target="_blank">논리연산자</a>와 함께 쓰입니다.</p>
-					<section class="ex">
-						<h3>데이터의 조건이 참 또는 거짓인지(진리값) 알아내기</h3>
-						<pre>
-							<code>const x = true;
-							const y = false;
+                /*
+                'Hi, My name is Jiyeong. 
+                I'm now 37. 
+                And I'm from Busan.'
+                */</code>
+            </pre>
+            <p>ES6 표준명세 이후 등장한 템플릿 문자열로 문자열을 간단하게 반환하고 채워넣을 수 있습니다. 템플릿 문자열은 '',""이 아닌 ``(backticks, 키보드의 1!키 왼쪽에 있는 키)로 둘러싸입니다. 반환될 문자열 변수를 ${} 안에 넣으면 해당되는 변수값이 출력됩니다.</p>
+          </section>
+          <h2 id="boolean">불리언 Boolean</h2>
+          <pre>
+            <code>
+              1 === 1 // true
+              1 === 2 // false</code>
+          </pre>
+          <p>불리언은 데이터에 대한 조건이 참 또는 거짓(true or false, yes or no)을 나타냅니다. 이 조건을 불리언값 또는 진리값이라 부릅니다. 주로 서로 다른 데이터값의 일치 여부를 확인하기 위해 다양한 <a href="#operators">연산자</a>와 함께 사용합니다.</p>
+          <section class="ex">
+            <h3>불리언이 아닌 데이터 타입의 진리값 Truthy & Falsy</h3>
+            <p>데이터 타입이 정확히 불리언은 아니지만 거짓으로 판정되는 값을 falsy값이라 부르고, 나머지 값을 truthy값이라 부릅니다. 자바스크립트는 0, -0, NaN, '', ""(빈 문자열), null, undefined 데이터 타입을 falsy 값으로 판단합니다. truthy값과 falsy값은 데이터가 falsy값(0, -0, NaN, 빈 문자열, null, undefined)인지 알아보기위해 아래와 같은 내용의 조건문에 주로 활용됩니다.</p>
+            <ol>
+              <li>값이 0으로 초기화 되었나요? or false 값끼리 산술연산 되었나요?(0, -0)</li>
+              <li>문자열 안에 내용이 있나요? (빈 문자열)</li>
+              <li>객체값이 비어있나요? (null)</li>
+              <li>변수를 정의했지만 변수값이 아직 지정되지 않았나요? (undefined)</li>
+            </ol> 
+            <h3><a href="#arithmeticOp">산술연산자</a>로 진리값 확인하기</h3>
+            <pre>
+              <code>
+                const x = true;
+                const y = false;
 
-							0 + x; // 1 
-							0 + y; // 0
-							'' + x; // true
-							'' + y; // false
-							false + x; // 1
-							false + y; // 0
-							null + x; // 1
-							null + y; // 0
-							undefined + x; // NaN
-							undefined + y; // NaN</code>
-						</pre>
-						<p>진리값을 <a href="#arithOp">산술연산</a>할 때 true는 1, false는 0으로 변환되어 계산됩니다.</p>
-					</section>
-					<h2 id="nullUndefined">빈값 Null & Undefined</h2>
-					<pre>
-						<code>typeof null; // object
-						typeof undefined; // undefined</code>
-					</pre>
-					<p>null(No Value)과 undefined 모두 값이 없음을 나타내지만, 뜻이 약간  다릅니다. null은 '객체 값이 존재하지 않음'을 나타내고, undefined는 '아직 값을 지정한 적이 없음'을 나타냅니다. 그래서 typeof로 null을 반환하면 object로, undefined를 반환하면 undefined로 출력됩니다. 빈값을 <a href="#arithOp">산술연산</a>할 때 null은 0, undefined는 NaN으로 변환되어 계산됩니다.</p>
-				</article>
-				<article id="arithOp" class="contents">
-					<h1>산술연산자</h1>
-					<pre>
-						<code>2 + 3 - 1; // 4
-						5 * 3 / 2; // 15 / 2 
-						// 7.5
-						11 % 2 ** 3; // 11 % 8
-						// 3</code>
-					</pre>
-					<p>산술연산자(Arithmetic Operators)는 마치 계산기처럼 주로 간단한 숫자 계산을 할 때 사용하는 연산자입니다. 산술연산자는 숫자, 문자열, 또는 변수(variables)를 피연산자(operators)로 넣을 수 있고, 그 결과값을 숫자 또는 문자열로 반환합니다. 피연산자의 타입과 연산자의 종류에 따라 결과값의 타입이 달라집니다. 따라서 연산 전에 피연산자를 미리 <a href="#number">숫자</a>로 변환해두어야 일관적인 결과값을 얻을 수 있습니다.</p>
-					<p>자바스크립트에 내장된 산술 연산자는 총 6가지의 종류가 있습니다.</p>
-						<ol>
-							<li><a href="#addArith">덧셈 + add</a></li>
-							<li><a href="#subtArith">뺄셈 - subtract</a></li>
-							<li><a href="#multiArith">곱셈 * multiply</a></li>
-							<li><a href="#divideArith">나눗셈 / divide</a></li>
-							<li><a href="#moduloArith">나머지 % modulo</a></li>
-							<li><a href="#exponentArith">거듭제곱 ** exponent</a></li>
-						</ol>
-					<h2 id="addArith">덧셈 +</h2>
-					<pre>
-						<code>0 + 1; // 1 
-						0 + true; // 1 
-						false + false; // 0 
+                0 + x; // 1 
+                0 + y; // 0
+                '' + x; // true
+                '' + y; // false
+                false + x; // 1
+                false + y; // 0
+                null + x; // 1
+                null + y; // 0
+                undefined + x; // NaN
+                undefined + y; // NaN</code>
+            </pre>
+            <p>진리값을 산술연산자로 계산할 때 true(truthy)는 숫자 1, false(falsy)는 숫자 0으로 변환되어 계산됩니다.</p>
+          </section>
+          <h2 id="nullUndefined">빈값 Null & Undefined</h2>
+          <pre>
+            <code>
+              typeof null; // object
+              typeof undefined; // undefined</code>
+          </pre>
+          <p>null(No Value)과 undefined 모두 값이 없음을 나타내지만, 뜻이 약간  다릅니다. null은 '객체 값이 존재하지 않음'을 나타내고, undefined는 '아직 값을 지정한 적이 없음'을 나타냅니다. 그래서 typeof로 null을 반환하면 object로, undefined를 반환하면 undefined로 출력됩니다. 빈값을 <a href="#arithmeticOp">산술연산</a>할 때 null은 0, undefined는 NaN으로 변환되어 계산됩니다.</p>
+        </article>
+        <article id="operators">
+          <h1>연산자</h1>
+          <p>자바스크립트에서 주로 쓰이는 연산자는 아래와 같습니다.</p>
+          <ol>
+            <li><a href="#arithmeticOp">산술연산자</a></li>
+            <li><a href="#assignmentOp">할당연산자</a></li>
+            <li><a href="#comparisonOp">비교연산자</a></li>
+            <li><a href="#logicalOp">논리연산자</a></li>
+          </ol>
+          <h2 id="arithmeticOp">산술연산자</h2>
+          <pre>
+            <code>
+              2 + 3 - 1; // 4
+              5 * 3 / 2; // 15 / 2 
+              // 7.5
+              11 % 2 ** 3; // 11 % 8
+              // 3</code>
+          </pre>
+          <p>산술연산자(Arithmetic Operators)는 마치 계산기처럼 주로 간단한 숫자 계산을 할 때 사용하는 연산자입니다. 산술연산자는 숫자, 문자열, 또는 변수(variables)를 피연산자(operators)로 넣을 수 있고, 그 결과값을 숫자 또는 문자열로 반환합니다. 피연산자의 타입과 연산자의 종류에 따라 결과값의 타입이 달라집니다. 따라서 연산 전에 피연산자를 미리 <a href="#number">숫자</a>로 변환해두어야 일관적인 결과값을 얻을 수 있습니다.</p>
+          <p>자바스크립트에 내장된 산술 연산자 중 기본적인 연산자는 아래와 같습니다.</p>
+          <ol>
+            <li><a href="#addArith">덧셈 + add</a></li>
+            <li><a href="#subtArith">뺄셈 - subtract</a></li>
+            <li><a href="#multiArith">곱셈 * multiply</a></li>
+            <li><a href="#divideArith">나눗셈 / divide</a></li>
+            <li><a href="#moduloArith">나머지 % modulo</a></li>
+            <li><a href="#exponentArith">거듭제곱 ** exponent</a></li>
+            <li><a href="#incre_decrementArith">증가 ++ 증감 -- increment & decrement</a></li>
+          </ol>
+          <section class="ex">
+            <h3 id="addArith">덧셈 +</h3>
+            <pre>
+              <code>
+                0 + 1; // 1 
+                0 + true; // 1 
+                false + false; // 0 
 
-						'Hi' + 5; // 'Hi5'
-						'Hi' + false; // 'Hifalse'
-						'Hi' + 'Five'; // 'HiFive'</code>
-					</pre>
-					<p>덧셈은 숫자 뿐만아니라 다양한 데이터 타입끼리의 연산이 가능합니다. 문자열과 숫자를 연결할 때(Concatenation) 또는 문자열끼리 연결할 때, 그리고 진리값끼리 연산할 때에도 덧셈을 사용할 수 있습니다.</p>
-					<h2 id="subtArith">뺄셈 -</h2>
-					<pre>
-						<code>0 - 1; // -1 
-						0 - true; // -1 
-						true - false; // 1 
+                'Hi' + 5; // 'Hi5'
+                'Hi' + false; // 'Hifalse'
+                'Hi' + 'Five'; // 'HiFive'</code>
+            </pre>
+            <p>덧셈은 숫자 뿐만아니라 다양한 데이터 타입끼리의 연산이 가능합니다. 문자열과 숫자를 연결할 때(Concatenation) 또는 문자열끼리 연결할 때, 그리고 진리값끼리 연산할 때에도 덧셈을 사용할 수 있습니다.</p>
+            <h3 id="subtArith">뺄셈 -</h3>
+            <pre>
+              <code>
+                0 - 1; // -1 
+                0 - true; // -1 
+                true - false; // 1 
 
-						'Hi5' - 5; // NaN
-						'Hifalse' - false; // NaN
-						'HiFive' - 'Five'; // NaN</code>
-					</pre>
-					<p>뺄셈은 데이터끼리의 차이를 출력합니다. 덧셈을 제외한 나머지 산술연산에서는 문자열을 포함한 결과값이 NaN으로 출력됩니다.</p>
-					<h2 id="multiArith">곱셈 *</h2>
-					<pre>
-						<code>1 * 2; // 2
-						1 * -2; // -2
-						1 * 0; // 0
-						Infinity * 0; // NaN
-						Infinity * Infinity; // Infinity</code>
-					</pre>
-					<h2 id="divideArith">나눗셈 /</h2>
-					<pre>
-						<code>1 / 2; // 0.5
-						1.0 / 2.0; // 0.5
-						0 / 2; // 0
-						2 / 0; // Infinity
-						2.0 / 0.0; // Infinity
-						2 / -0; // -Infinity</code>
-					</pre>
-					<h2 id="moduloArith">나머지 %</h2>
-					<pre>
-						<code>12 % 5; // 2
-						1 % 2; // 1	
-						-1 % 2; // -1
-						1 % -2; // 1
-						2 % 2; // 0
-						-2 % 2; // -0
-						0 % 2; // 0
-						2 % 0; // NaN
-						NaN % 2; // NaN
-						5.5 % 2; // 1.5</code>
-					</pre>
-					<h2 id="exponentArith">거듭제곱 **</h2>
-					<pre>
-						<code>12 % 5; // 2
-						1 % 2; // 1	
-						-1 % 2; // -1
-						1 % -2; // 1
-						2 % 2; // 0
-						-2 % 2; // -0
-						0 % 2; // 0
-						2 % 0; // NaN
-						NaN % 2; // NaN
-						5.5 % 2; // 1.5</code>
-					</pre>
-				</article>
-				<!--<article id="assignOp" class="contents">
-					<h1>할당연산자</h1>
-					<pre>
-						<code>let a = 10;
-						let b = 20;
-						let c = 100;
-						let d = 2000;
-						let e = 45;
+                'Hi5' - 5; // NaN
+                'Hifalse' - false; // NaN
+                'HiFive' - 'Five'; // NaN</code>
+            </pre>
+            <p>뺄셈은 데이터끼리의 차이를 출력합니다. 덧셈을 제외한 나머지 산술연산에서는 문자열을 포함한 결과값이 NaN으로 출력됩니다.</p>
+            <h3 id="multiArith">곱셈 *</h3>
+            <pre>
+              <code>
+                1 * 2; // 2
+                1 * -2; // -2
+                1 * 0; // 0
+                Infinity * 0; // NaN
+                Infinity * Infinity; // Infinity</code>
+            </pre>
+            <h3 id="divideArith">나눗셈 /</h3>
+            <pre>
+              <code>
+                1 / 2; // 0.5
+                1.0 / 2.0; // 0.5
+                0 / 2; // 0
+                2 / 0; // Infinity
+                2.0 / 0.0; // Infinity
+                2 / -0; // -Infinity</code>
+            </pre>
+            <h3 id="moduloArith">나머지 %</h3>
+            <pre>
+              <code>
+                12 % 5; // 2
+                1 % 2; // 1 
+                -1 % 2; // -1
+                1 % -2; // 1
+                2 % 2; // 0
+                -2 % 2; // -0
+                0 % 2; // 0
+                2 % 0; // NaN
+                NaN % 2; // NaN
+                5.5 % 2; // 1.5</code>
+            </pre>
+            <h3 id="exponentArith">거듭제곱 **</h3>
+            <pre>
+              <code>
+                2 ** 3; // 8
+                -2 ** 3; // Invalid
+                -(2 ** 3); // -8
+                (-2) ** 3; // 8
 
-						a += 5; // 15
-						b -= 30; // -10
-						c *= 8; // 800
-						d /= 50; // 40
-						e %= 8; // 5</code>
-					</pre>
-					<p>할당연산자(Assignment Operators)는 연산자 기준으로 오른쪽 피연산자의 값을 왼쪽의 피연산자에 할당합니다.</p>
-					<p>기본적으로 사용되는 할당 연산자는 총 6가지의 종류가 있습니다.</p>
-						<ol>
-							<li><a href="#equalAssign">할당 = assignment</a></li>
-							<li><a href="#addAssign">덧셈 할당 += addition assignment</a></li>
-							<li><a href="#subtAssign">뺄셈 할당 -= subtraction assignment</a></li>
-							<li><a href="#multiAssign">곱셈 할당 *= multiply assignment</a></li>
-							<li><a href="#divideAssign">나눗셈 할당 /= divide assignment</a></li>
-							<li><a href="#moduloAssign">나머지 할당 %= modulo assignment</a></li>	
-						</ol>
-					<h2 id="equalAssign">할당</h2>
-					<pre>
-						<code>0 + 1; // 1 
-						0 + true; // 1 
-						false + false; // 0 
+                3 ** 2.5 // 15.588457268119896
+                10 ** -1 // 0.1
+                NaN ** 2 // NaN
 
-						'Hi' + 5; // 'Hi5'
-						'Hi' + false; // 'Hifalse'
-						'Hi' + 'Five'; // 'HiFive'</code>
-					</pre>
-					<p>덧셈은 숫자 뿐만아니라 다양한 데이터 타입끼리의 연산이 가능합니다. 문자열과 숫자를 연결할 때(Concatenation) 또는 문자열끼리 연결할 때, 그리고 진리값끼리 연산할 때에도 덧셈을 사용할 수 있습니다.</p>
-					<h2 id="addAssign">덧셈 할당</h2>
-					<pre>
-						<code>0 - 1; // -1 
-						0 - true; // -1 
-						true - false; // 1 
+                2 ** 2 ** 3; // 128
+                2 ** (2 ** 3) // 128
+                (2 ** 2) ** 3 // 64</code>
+            </pre>
+            <p>자바스크립트에서 거듭제곱을 사용할 때는 괄호 등으로 양음수 여부나 계산 순서를 명확히 해주어야 합니다.</p>
+            <h3 id="incre_decrementArith">증가 ++ 증감 -- </h3>
+            <pre>
+              <code>
+                let x = 5;
+                y = x++; // x = 6, y = 5
+                y = x--; // x = 4, y = 5
+                // 연산자가 피연산자의 뒤에 붙었을 때
 
-						'Hi5' - 5; // NaN
-						'Hifalse' - false; // NaN
-						'HiFive' - 'Five'; // NaN</code>
-					</pre>
-					<p>뺄셈은 데이터끼리의 차이를 출력합니다. 덧셈을 제외한 나머지 산술연산에서는 문자열을 포함한 결과값이 NaN으로 출력됩니다.</p>
-					<h2 id="subtAssign">뺄셈 할당</h2>
-					<pre>
-						<code>1 * 2; // 2
-						1 * -2; // -2
-						1 * 0; // 0
-						Infinity * 0; // NaN
-						Infinity * Infinity; // Infinity</code>
-					</pre>
-					<h2 id="multiAssign">곱셈 할당</h2>
-					<pre>
-						<code>1 / 2; // 0.5
-						1.0 / 2.0; // 0.5
-						0 / 2; // 0
-						2 / 0; // Infinity
-						2.0 / 0.0; // Infinity
-						2 / -0; // -Infinity</code>
-					</pre>
-					<h2 id="divideAssign">나눗셈 할당</h2>
-					<pre>
-						<code>12 % 5; // 2
-						1 % 2; // 1	
-						-1 % 2; // -1
-						1 % -2; // 1
-						2 % 2; // 0
-						-2 % 2; // -0
-						0 % 2; // 0
-						2 % 0; // NaN
-						NaN % 2; // NaN
-						5.5 % 2; // 1.5</code>
-					</pre>
-					<h2 id="moduloAssign">나머지 할당</h2>
-					<pre>
-						<code>12 % 5; // 2
-						1 % 2; // 1	
-						-1 % 2; // -1
-						1 % -2; // 1
-						2 % 2; // 0
-						-2 % 2; // -0
-						0 % 2; // 0
-						2 % 0; // NaN
-						NaN % 2; // NaN
-						5.5 % 2; // 1.5</code>
-					</pre>
-				</article>-->
-				<article id="object" class="contents">
-					<h1>객체</h1>
-					<p>객체(object)는 마치 컨테이너 박스처럼 한꺼번에 여러 값을 담을 수 있는 구조를 지닌 데이터 타입입니다. 객체는 상당히 많은 기능을 갖고있기 때문에, 자바스크립트의 여러 기능들을 다루기 위해서는 객체에 대해 잘 알고있어야 합니다.</p>
-					<h2 id="property">프로퍼티 Property</h2>
-					<pre>
-						<code>const weather = '2019.04.14 Today: 날씨 맑음!!' 
-						// weather은 객체의 이름입니다.
+                let a = 5;
+                b = ++a; // a = 6, b = 6
+                b = --a; // a = 4, b = 4
+                // 연산자가 피연산자의 뒤에 붙었을 때</code>
+            </pre>
+            <p>증가, 증감 연산자는 피연산자1의 뒤에 붙으면 피연산자2의 값을 계산 전 값으로 반환하고, 피연산자1의 앞에 붙으면 피연산자2의 값을 계산 후 값으로 반환합니다.</p>
+          </section>
+          <h2 id="assignmentOp">할당연산자</h2>
+          <pre>
+            <code>
+              let a = 10;
+              let b = 20;
+              let c = 100;
+              let d = 2000;
+              let e = 45;
 
-						weather.length; // 25
-						// .length는 객체 안의 길이 속성을 출력하는 프로퍼티입니다.</code>
-					</pre>
-					<p>프로퍼티는 객체 안에서 변수처럼 이름 붙여지는 객체의 속성들입니다. 객체의 이름(name) 뒤에 .(점 연산자, dot operator)를 쓰고 프로퍼티를 붙입니다.</p>
-					<h2 id="methods">메소드 Methods</h2>
-					<pre>
-						<code>const weather = '2019.04.14 Today: 날씨 맑음!!' 
-						// weather은 객체의 이름입니다.
+              a += 5; // 15
+              b -= 30; // -10
+              c *= 8; // 800
+              d /= 50; // 40
+              e %= 8; // 5</code>
+          </pre>
+          <p>할당연산자(Assignment Operators)는 연산자 기준으로 오른쪽 피연산자의 값을 왼쪽의 피연산자에 할당합니다.</p>
+          <p>기본적으로 사용되는 할당 연산자는 총 6가지의 종류가 있습니다.</p>
+          <ol>
+            <li><a href="#equalAssign">할당 = assignment</a></li>
+            <li><a href="#addAssign">덧셈 할당 += addition assignment</a></li>
+            <li><a href="#subtAssign">뺄셈 할당 -= subtraction assignment</a></li>
+            <li><a href="#multiAssign">곱셈 할당 *= multiply assignment</a></li>
+            <li><a href="#divideAssign">나눗셈 할당 /= divide assignment</a></li>
+            <li><a href="#moduloAssign">나머지 할당 %= modulo assignment</a></li>
+          </ol>
+          <section class="ex">
+            <h3 id="equalAssign">할당</h3>
+            <pre>
+              <code>
+                let x = 5;
+                let y = 10;
+                let z = 25;
 
-						weather.charAt(6); // 4
-						// .charAt()는 객체의 글자 순서를 변수에 맞춰 출력하는 함수, 메소드입니다.</code>
-					</pre>
-					<p>메소드는 객체 안에서 쓰이는 함수입니다. 프로퍼티처럼 객체의 이름 뒤에 .(점 연산자)를 쓴 뒤에 메소드를 붙입니다.</p>
-					<h2 id="built-inObj">내장 객체 Built-in Objects</h2>
-					<p>개발자가 새로운 객체를 직접 만들고 이름붙일 수 있지만, 자바스크립트에는 이미 내장된 객체들이 많이 있습니다. 예를 들어, Math는 수 연산과 관련된 많은 메소드와 상수들을 지닌 내장 객체 입니다.</p>
-					<section class="ex">
-						<h3>Math 객체의 메소드와 상수들</h3>
-						<pre>
-							<code>Math.E(); // 자연상수 e (2.71...)
-							Math.PI(); // 원주율 (3.14...)
+                x = y; // x = 10;</code>
+            </pre>
+            <p>한 개의 값을 여러개의 변수에 할당하기 위해 할당 연산자를 연속으로 사용할 수 있습니다.</p>
+            <h3 id="addAssign">덧셈 할당</h3>
+            <pre>
+              <code>
+                let str = 'string';
+                let num = 5;
+                let boo = true;
 
-							Math.sin(); // 사인
-							Math.cos(); // 코사인
-							Math.tan(); // 탄젠트
-							Math.log(); // 밑을 자연상수로 두는 로그함수
-							Math.exp(); // 밑을 자연상수로 두는 지수함수
-							Math.sqrt(); // 제곱근
-							
-							Math.abs(); // 절댓값
-							Math.ceil(); // 소수점 이하 올림
-							Math.floor(); // 소수점 이하 내림
-							Math.round(); // 소수점 이하 반올림
-							Math.trunc(); // 소수점 이하 잘라내기
+                num += 2; // 7
+                boo += 2; // 3
+                boo += false; // 1
+              
+                num += 'foo'; // '5foo'
+                str += false; // 'stringfalse'
+                str += 'foo'; // 'stringfoo'</code>
+            </pre>
+            <p>두개의 피연산자 데이터 타입에 따라 숫자의 덧셈 또는 문자열의 연결이 가능합니다.</p>
+            <h3 id="subtAssign">뺄셈 할당</h3>
+            <pre>
+              <code>
+                let str = 'string';
+                let num = 5;
+                let boo = true;
 
-							Math.max(); // 최댓값
-							Math.min(); // 최소값
+                num -= 2; // 3
+                boo -= 2; // -1
+                str -= 2; // NaN</code>
+            </pre>
+            <h3 id="multiAssign">곱셈 할당</h3>
+            <pre>
+              <code>
+                let str = 'string';
+                let num = 5;
+                let boo = true;
 
-							Math.random(); // 랜덤값</code>
-						</pre>
-					</section>
-				</article>
-			</main>
-			<footer>
-				<p>Referenced by 《Introduction to JavaScript》, Codecademy<br>
-				Written & Edited by Lee Ujin</p>
-			</footer>
-		</div>
-	</body>
+                num *= 2; // 10
+                boo *= 2; // 2
+                str *= 2; // NaN</code>
+            </pre>
+            <h3 id="divideAssign">나눗셈 할당</h3>
+            <pre>
+              <code>
+                let str = 'string';
+                let num = 5;
+                let boo = true;
+
+                num /= 2; // 2.5
+                boo /= 2; // 0.5
+                str /= 2; // NaN
+                num /= 0; // Infinity</code>
+            </pre>
+            <h3 id="moduloAssign">나머지 할당</h3>
+            <pre>
+              <code>
+                let str = 'string';
+                let num = 5;
+                let boo = true;
+
+                num %= 2; // 1
+                boo %= 2; // 1
+                str %= 2; // NaN
+                num %= 0; // Infinity</code>
+            </pre>
+          </section>
+          <h2 id="comparisonOp">비교연산자</h2>
+          <h2 id="logicalOp">논리연산자</h2>
+        </article>
+        <article id="object">
+          <h1>객체</h1>
+          <p>객체(object)는 마치 컨테이너 박스처럼 한꺼번에 여러 값을 담을 수 있는 구조를 지닌 데이터 타입입니다. 객체는 상당히 많은 기능을 갖고있기 때문에, 자바스크립트의 여러 기능들을 다루기 위해서는 객체에 대해 잘 알고있어야 합니다.</p>
+          <h2 id="property">프로퍼티 Property</h2>
+          <pre>
+            <code>
+              const weather = '2019.04.14 Today: 날씨 맑음!!' 
+              // weather은 객체의 이름입니다.
+
+              weather.length; // 25
+              // .length는 객체 안의 길이 속성을 출력하는 프로퍼티입니다.</code>
+          </pre>
+          <p>프로퍼티는 객체 안에서 변수처럼 이름 붙여지는 객체의 속성들입니다. 객체의 이름(name) 뒤에 .(점 연산자, dot operator)를 쓰고 프로퍼티를 붙입니다.</p>
+          <h2 id="methods">메소드 Methods</h2>
+          <pre>
+            <code>
+              const weather = '2019.04.14 Today: 날씨 맑음!!' 
+              // weather은 객체의 이름입니다.
+
+              weather.charAt(6); // 4
+              // .charAt()는 객체의 글자 순서를 변수에 맞춰 출력하는 함수, 메소드입니다.</code>
+          </pre>
+          <p>메소드는 객체 안에서 쓰이는 함수입니다. 프로퍼티처럼 객체의 이름 뒤에 .(점 연산자)를 쓴 뒤에 메소드를 붙입니다.</p>
+          <h2 id="built-inObj">내장 객체 Built-in Objects</h2>
+          <p>개발자가 새로운 객체를 직접 만들고 이름붙일 수 있지만, 자바스크립트에는 이미 내장된 객체들이 많이 있습니다. 예를 들어, Math는 수 연산과 관련된 많은 메소드와 상수들을 지닌 내장 객체 입니다.</p>
+          <section class="ex">
+            <h3>Math 객체의 메소드와 상수들</h3>
+            <pre>
+              <code>
+                Math.E(); // 자연상수 e (2.71...)
+                Math.PI(); // 원주율 (3.14...)
+
+                Math.sin(); // 사인
+                Math.cos(); // 코사인
+                Math.tan(); // 탄젠트
+                Math.log(); // 밑을 자연상수로 두는 로그함수
+                Math.exp(); // 밑을 자연상수로 두는 지수함수
+                Math.sqrt(); // 제곱근
+                
+                Math.abs(); // 절댓값
+                Math.ceil(); // 소수점 이하 올림
+                Math.floor(); // 소수점 이하 내림
+                Math.round(); // 소수점 이하 반올림
+                Math.trunc(); // 소수점 이하 잘라내기
+
+                Math.max(); // 최댓값
+                Math.min(); // 최소값
+
+                Math.random(); // 랜덤값</code>
+            </pre>
+          </section>
+        </article>
+        <article id="conditionalStm">
+          <h1>조건문</h1>
+          <h2 id="ifElse">if & else</h2>
+          <pre>
+            <code>
+              let a = true;
+
+              if (a) {
+                console.log('a is true!');
+              } else {
+                console.log('a is false!');
+              }
+
+              // 'a is true!'</code>
+          </pre>
+          <p>if문은 미리 지정된 변수를 자식개체로 삼아 ()에 넣고, 자식개체의 진리값(true & false, truthy & falsy)에 따라 어떤 행동을 출력할 지 {}에 적어냅니다. if문의 a값이 참이면 첫 번째 행동을, 거짓이면 else에 적힌 두 번째 행동을 출력합니다.</p>
+          <section class="ex">
+            <h3>Truthy & Falsy Assignment</h3>
+            <pre>
+              <code>
+                let name = '';
+                let userId = name || '익명의 사용자';
+
+                console.log(`${userId}님이 로그인 하셨습니다.`);
+                // '익명의 사용자님이 로그인하셨습니다.'
+
+                name = 'Ujin';
+                userId = name || '익명의 사용자';
+                
+                console.log(`${userId}님이 로그인 하셨습니다.`);
+                // 'Ujin님이 로그인하셨습니다.'</code>
+            </pre>
+            <p>Short-circuit Evaluation</p>
+            <h3>Ternaty Operator</h3>
+            <pre>
+              <code>
+                let name = '';
+                let userId = name || '익명의 사용자';
+
+                name ? console.log(`${userId}님, 오늘의 소식을 알려드릴게요.`) : console.log(`로그인하면 새로운 소식을 확인할 수 있습니다.`);</code>
+            </pre>
+            <p>Short-circuit Evaluation</p>
+            <h3>else if</h3>
+            <pre>
+              <code>
+                let weather;
+
+                if (weather === 'sunny') {
+                  console.log('Great to walk!');
+                } else if (weather === 'gloomy') {
+                  console.log('Not so bad.');
+                } else if (weather === 'rainy') {
+                  console.log('Take your umbrella!');
+                } else {
+                  console.log('How's the weather outside?');
+                }</code>
+            </pre>
+            <p>Short-circuit Evaluation</p>
+          </section>
+          <h2 id="switch">switch</h2>
+          <pre>
+            <code>
+              let name = '';
+              let weather;
+
+              switch (weather) {
+                case 'sunny':
+                  console.log('Great to walk!');
+                  break;
+                case 'gloomy':
+                  console.log('Not so bad.');
+                  break;
+                case 'rainy':
+                  console.log('Take your umbrella!');
+                  break;
+                default:
+                  console.log('How's the weather outside?');
+                  break;
+              }</code>
+          </pre>
+          <p>Short-circuit Evaluation</p>
+        </article>
+      </main>
+      <footer>
+        <p>Referenced by 《Introduction to JavaScript》, Codecademy<br>
+        Written & Edited by Lee Ujin</p>
+      </footer>
+    </div>
+  </body>
 </html>

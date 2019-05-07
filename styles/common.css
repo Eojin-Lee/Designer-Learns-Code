@@ -12,7 +12,7 @@ pre {
 	overflow: auto;
 	word-wrap: break-word;
 	margin-left: 2.1px;
-	padding: 9px 0;
+	padding: 9px 1px;
 	border-left: 4.2px solid #787878;
 	background-color: #e8e8e8;
 }
@@ -47,26 +47,21 @@ header {
 	bottom: 0;
 	margin: 0;
 }
+.main-content, footer {
+	position: relative;
+	margin: 48px auto;
+	max-width: 1200px;
+	min-width: 570px;
+}
 pre > code {
 	position: relative;
 	top: -6px;
-	left: -90px;
-	font-family: consolas, "맑은 고딕", "Malgun Gothic", monospace;
-	font-size: 15px;
-	line-height: 1.88em;
-	color: #444;
-}
-.ex > pre > code {
 	left: -105px;
-}
-.main-content, footer {
-	position: relative;
-	margin: 60px auto;
-	max-width: 1200px;
+	font-family: consolas, "맑은 고딕", "Malgun Gothic", monospace;
+	color: #444;
 }
 nav > ul > li > a {
 	margin: 0 24px;
-	font-size: 15px;
 	line-height: 2.6em;
 	color: #f9f9f9;
 }
@@ -76,60 +71,59 @@ nav > ul > li > a {
 }
 .menu-dropdown {
 	margin-left: 15px;
-	line-height: 1.88em;
-}
-article {
-	margin-bottom: 18px;
-	padding: 66px 54px 140px 54px;
 }
 .ex {
-	margin-top: 36px;
+	margin-top: 48px;
 	padding: 15px 36px 45px 36px;
-	border: 9px solid #e8e8e8;
+	border: 3px solid #e8e8e8;
 	border-radius: 21px;
+}
+article {
+	padding: 84px 54px 150px 54px;
+}
+section {
+	padding-top: 102px;
 }
 footer {
 	padding: 0 54px;
 }
-h1 {
-	margin-top: 42px;
-	font-weight: lighter;
-	font-size: 51px;
-	line-height: 1.24em;
-	color: #787878;
-}
-h2 {
-	margin-top: 96px;
-	font-weight: bold;
-	font-size: 30px;
-	line-height: 1.24em;
-	color: #333;
-}
-h3 {
-	margin-top: 52px;
-	font-weight: normal;
-	font-size: 21px;
-	line-height: 1.24em;
-	color: #787878;
-}
-p {
-	margin-bottom: 24px;
-	font-size: 15px;
-	line-height: 1.88em;
-	color: #000;
+ul, ol {
+	margin: 0;
 }
 ul {
-	margin: 0;
 	padding: 0;
 	list-style: none;
 }
 ol {
-	margin: 0;
 	padding: 0 0 18px 66px;
 }
-li {
+p, li, pre > code {
 	font-size: 15px;
 	line-height: 1.88em;
+}
+footer > p {
+	font-size: 12px;
+	line-height: 1.66em;
+	color: #777;
+}
+h1 {
+	font-weight: lighter;
+	font-size: 50px;
+}
+h2 {
+	font-weight: bold;
+	font-size: 30px;
+}
+h3 {
+	margin-top: 45px;
+	font-weight: normal;
+	font-size: 20px;
+}
+h1, h2, h3 {
+	line-height: 1.12em;
+}
+h1, h3 {
+	color: #787878;
 }
 a {
 	font-weight: bold;
@@ -139,18 +133,9 @@ a {
 a:hover {
 	border-bottom: 1.5px solid;
 }
-.sidebar > ul > li > a {
-	color: #444;
-}
 .menu-top > a {
 	font-weight: normal;	
 }
-.menu-dropdown > a {
-	font-weight: bold;
-} 
-footer > p {
-	font-weight: normal;
-	font-size: 12px;
-	line-height: 1.66em;
-	color: #777;
+pre > code, .sidebar > ul > li > a {
+	color: #444;
 }

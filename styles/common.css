@@ -3,13 +3,14 @@ body {
 	word-break: keep-all;
 	background-color: #fff;
 	font-family: Arial, "맑은 고딕", "Malgun Gothic", sans-serif;
+	font-size: 15px;
 }
 nav, nav > ul > li {
 	display: inline-block;
 }
 pre {
 	display: block;
-	overflow: auto;
+	overflow-x: auto;
 	word-wrap: break-word;
 	margin-left: 2.1px;
 	padding: 9px 1px;
@@ -34,9 +35,9 @@ header {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	width: 180px;
-	padding: 48px 0 66px 30px;
 	overflow-y: auto;
+	width: 180px;
+	padding: 24px 0 66px 30px;
 	background-color: #e8e8e8;
 }
 .main-wrapper {
@@ -45,20 +46,19 @@ header {
 	left: 210px;
 	right: 0;
 	bottom: 0;
+	overflow-x: auto;
 	margin: 0;
 }
 .main-content, footer {
 	position: relative;
 	margin: 48px auto;
-	max-width: 1200px;
-	min-width: 570px;
+	max-width: 1024px;
 }
 pre > code {
 	position: relative;
 	top: -6px;
 	left: -105px;
 	font-family: consolas, "맑은 고딕", "Malgun Gothic", monospace;
-	color: #444;
 }
 nav > ul > li > a {
 	margin: 0 24px;
@@ -67,71 +67,74 @@ nav > ul > li > a {
 }
 .menu-top {
 	margin-top: 24px;
-	line-height: 2.4em;
+	line-height: 2.6em;
 }
 .menu-dropdown {
 	margin-left: 15px;
 }
 .ex {
-	margin-top: 48px;
-	padding: 15px 36px 45px 36px;
+	margin: 36px 0;
+	padding: 36px;
 	border: 3px solid #e8e8e8;
 	border-radius: 21px;
 }
-article {
-	padding: 84px 54px 150px 54px;
-}
-section {
-	padding-top: 102px;
-}
-footer {
-	padding: 0 54px;
-}
 ul, ol {
 	margin: 0;
+}
+h3 {
+	margin-top: 62px;
+	font-weight: normal;
+	font-size: 1.88em;
+}
+article {
+	padding: 58px 54px 150px 54px;
+}
+section {
+	padding-top: 76px;
+}
+.footer-contents {
+	padding: 0 54px;
 }
 ul {
 	padding: 0;
 	list-style: none;
 }
 ol {
-	padding: 0 0 18px 66px;
+	padding: 0 0 18px 18px;
+}
+.inner-ol {
+	padding: 0 0 0 36px;
+	list-style: lower-roman;
+}
+a:hover {
+	border-bottom: 1.5px solid;
 }
 p, li, pre > code {
-	font-size: 15px;
+	font-size: 1em;
 	line-height: 1.88em;
 }
-footer > p {
-	font-size: 12px;
-	line-height: 1.66em;
+footer > .footer-contents > p {
 	color: #777;
 }
 h1 {
 	font-weight: lighter;
-	font-size: 50px;
+	font-size: 3.5em;
+	line-height: 1.24em;
+	color: #787878;
 }
 h2 {
 	font-weight: bold;
-	font-size: 30px;
+	font-size: 2.4em;
 }
-h3 {
-	margin-top: 45px;
-	font-weight: normal;
-	font-size: 20px;
-}
-h1, h2, h3 {
-	line-height: 1.12em;
-}
-h1, h3 {
-	color: #787878;
+h2, h3 {
+	font-weight: bold;
+	line-height: 1.48em;
+	color: #333;
 }
 a {
 	font-weight: bold;
 	text-decoration: none;
 	color: #4d4ddd;
-}
-a:hover {
-	border-bottom: 1.5px solid;
 }
 .menu-top > a {
 	font-weight: normal;	

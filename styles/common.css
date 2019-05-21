@@ -1,144 +1,47 @@
-body {
-	margin: 0;
-	word-break: keep-all;
-	background-color: #fff;
-	font-family: Arial, "맑은 고딕", "Malgun Gothic", sans-serif;
-	font-size: 15px;
-}
-nav, nav > ul > li {
-	display: inline-block;
-}
-pre {
-	display: block;
-	overflow-x: auto;
-	word-wrap: break-word;
-	margin-left: 2.1px;
-	padding: 9px 1px;
-	border-left: 4.2px solid #787878;
-	background-color: #e8e8e8;
-}
-header {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	z-index: 1;
-	height: 36px;
-	padding: 6px;
-	background-color: #4d4ddd;
-	box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.3);
-}
-.sidebar {
-	position: fixed;
-	top: 48px;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	overflow-y: auto;
-	width: 180px;
-	padding: 24px 0 66px 30px;
-	background-color: #e8e8e8;
-}
-.main-wrapper {
-	position: absolute;
-	top: 0;
-	left: 210px;
-	right: 0;
-	bottom: 0;
-	overflow-x: auto;
-	margin: 0;
-}
-.main-content, footer {
-	position: relative;
-	margin: 48px auto;
-	max-width: 1024px;
-}
-pre > code {
-	position: relative;
-	top: -6px;
-	left: -105px;
-	font-family: consolas, "맑은 고딕", "Malgun Gothic", monospace;
-}
-nav > ul > li > a {
-	margin: 0 24px;
-	line-height: 2.6em;
-	color: #f9f9f9;
-}
-.menu-top {
-	margin-top: 24px;
-	line-height: 2.6em;
-}
-.menu-dropdown {
-	margin-left: 15px;
-}
-.ex {
-	margin: 36px 0;
-	padding: 36px;
-	border: 3px solid #e8e8e8;
-	border-radius: 21px;
-}
-ul, ol {
-	margin: 0;
-}
-h3 {
-	margin-top: 62px;
-	font-weight: normal;
-	font-size: 1.88em;
-}
-article {
-	padding: 58px 54px 150px 54px;
-}
-section {
-	padding-top: 76px;
-}
-.footer-contents {
-	padding: 0 54px;
-}
-ul {
-	padding: 0;
-	list-style: none;
-}
-ol {
-	padding: 0 0 18px 18px;
-}
-.inner-ol {
-	padding: 0 0 0 36px;
-	list-style: lower-roman;
-}
-a:hover {
-	border-bottom: 1.5px solid;
-}
-p, li, pre > code {
-	font-size: 1em;
-	line-height: 1.88em;
-}
-footer > .footer-contents > p {
-	color: #777;
-}
-h1 {
-	font-weight: lighter;
-	font-size: 3.5em;
-	line-height: 1.24em;
-	color: #787878;
-}
-h2 {
-	font-weight: bold;
-	font-size: 2.4em;
-}
-h2, h3 {
-	font-weight: bold;
-	line-height: 1.48em;
-	color: #333;
-}
-a {
-	font-weight: bold;
-	text-decoration: none;
-	color: #4d4ddd;
-}
-.menu-top > a {
-	font-weight: normal;	
-}
-pre > code, .sidebar > ul > li > a {
-	color: #444;
-}
+@charset "utf-8"; 
+/* 
+file: common.css
+author: Lee Ujin
+css order: id > tag & class > class > tag
+css selector order: type > layout > class > others
+css property order: (top, right, bottom, left)
+1. display > overflow > position(z-index)
+2. width & height (max, min) > margin & padding 
+3. border (width, color, radius) > background (color)
+4. font (style, weight, size, line-height, family)
+5. color > text (decoration, align, white-space, word-spacing) > etc
+*/
+body{margin:0; background-color:#fff; font:.625em/1 Arial,"맑은 고딕","Malgun Gothic",sans-serif; word-break:keep-all;}
+pre{display:block; overflow-x:auto; overflow-y:hidden; margin:0 0 4em 2.1px; padding-left:5.9px; border-left:4.2px solid #787878; background-color:#30303f; line-height:1.6em; word-wrap:break-word;}
+header,.sidebar,.main-wrapper,pre>code{right:0;bottom:0;}
+.main-content,footer{position:relative; max-width:1024px; min-width:300px; margin:40px auto;}
+.sidebar{overflow-y:auto; position:fixed; top:40px; left:0; z-index:1111; width:166px; padding:3.24em 0 6em 24px;}
+.main-wrapper{position:absolute; top:0; left:190px;}
+header{position:fixed; top:0; left:0; z-index:11111; height:40px; padding-left: 24px; background-color:#4d4ddd; box-shadow:1px 2px 6px rgba(0,0,0,.3);}
+pre>code{position:relative; top:-6px; left:-105px; font:1.46em/1.64em consolas,"맑은 고딕","Malgun Gothic",monospace; color:#eee;}
+#intro{margin-top:-40px;}
+.menu-top{margin-top:1.88em; line-height:2.24em;}
+.menu-dropdown{margin-left:1em;}
+.ex{margin:6.24em 0; padding:3.64em; border:3px solid #efeffe; border-radius:2.12em;}
+.question{margin:3.64em 0 9em 0; padding:4.88em 3.64em 3.64em 3.64em; border-radius:2.12em;}
+.footer-contents{padding:0 5.48em;}
+article{padding:6.24em 2.48em 15em 2.48em;}
+section{padding-top:8.24em;}
+ul,ol{margin:0;}
+ul{padding:0; list-style:none;}
+ol{padding:0 0 1.24em 1.24em;}
+h4{margin:.64em 0 2.88em 0;}
+strong{background-color:#fff03b;}
+.question,.sidebar{background-color:#efeffe;}
+.question>span{font-size:2.24em;}
+p,li,span,strong,h4{font-size:1.56em; line-height:1.88em;}
+h1{font-weight:lighter; font-size:5.2em; line-height:1.12em; color:#787878; text-indent:-.02em;}
+h2,h3,h4{font-weight:700;}
+h2,h3{line-height:1.24em;}
+h2{font-size:3.48em;}
+h3{font-size:2.64em;}
+a{font-weight:700; color:#4d4ddd; text-decoration:none;}
+.menu-top>a{font-weight:400;}
+header>a{font-size:1.64em; font-weight:400; line-height:2.52em; color:#f9f9f9;}
+.sidebar>ul>li>a,.question>p, h2, h3{color:#333;}
+h4,.footer-contents>p,.question>span{color:#777;}

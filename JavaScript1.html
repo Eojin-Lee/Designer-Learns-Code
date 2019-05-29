@@ -4,50 +4,60 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Intro | JavaScript</title>
-    <!--common css-->
-    <link rel="stylesheet" href="styles/common-compressed.css">
+    <!--css-->
+    <link rel="stylesheet" href="styles/common.css">
+    <!--webfont-->
+    <link rel="stylesheet" type="text/css" href='https://cdn.rawgit.com/kattergil/NotoSerifKR-Web/5e08423b/stylesheet/NotoSerif-Web.css' as="font">
   </head>
   <body>
     <header>
-      <a id="home" href="https://ujin-lee.github.io/Designer-Learns-Code/JavaScript1.html">Intro to JavaScript</a>
+      <a id="refresh" href="https://ujin-lee.github.io/Designer-Learns-Code/JavaScript1.html">Intro to JavaScript</a>
     </header>
     <nav class="sidebar">
       <ul>
         <li class="menu-top"><a href="#intro">JavaScript 소개</a></li>
         <li class="menu-dropdown"><a href="#specification">표준 명세</a></li>
         <li class="menu-top"><a href="#tutorial">튜토리얼</a></li>
-        <li class="menu-dropdown"><a href="#comments">명령문</a></li>
-        <li class="menu-dropdown"><a href="#expressions">표현식</a></li>
-        <li class="menu-dropdown"><a href="#comments">주석</a></li>
+        <li class="menu-dropdown"><a href="#statement">명령문</a></li>
+        <li class="menu-dropdown"><a href="#expression">표현식</a></li>
+        <li class="menu-dropdown"><a href="#comment">주석</a></li>
         <li class="menu-dropdown"><a href="#console">콘솔</a></li>
         <li class="menu-top"><a href="#variable">변수</a></li>
         <li class="menu-dropdown"><a href="#variableDeclaring">변수 선언</a></li>
         <li class="menu-dropdown"><a href="#variableAssignment">변수 할당</a></li>
         <li class="menu-dropdown"><a href="#hoisting">호이스팅</a></li>
-        <li class="menu-top"><a href="#dataTypes">데이터 타입</a></li>
+        <li class="menu-top"><a href="#dataType">데이터 타입</a></li>
         <li class="menu-dropdown"><a href="#number">숫자</a></li>
         <li class="menu-dropdown"><a href="#string">문자열</a></li>
         <li class="menu-dropdown"><a href="#boolean">불리언</a></li>
         <li class="menu-dropdown"><a href="#nullUndefined">빈값</a></li>
-        <li class="menu-top"><a href="#operators">연산자</a></li>
+        <li class="menu-top"><a href="#operator">연산자</a></li>
         <li class="menu-dropdown"><a href="#arithmeticOp">산술연산자</a></li>
         <li class="menu-dropdown"><a href="#assignmentOp">할당연산자</a></li>
         <li class="menu-dropdown"><a href="#comparisonOp">비교연산자</a></li>
         <li class="menu-dropdown"><a href="#logicalOp">논리연산자</a></li>
-        <li class="menu-top"><a href="#object">객체</a></li>
-        <li class="menu-dropdown"><a href="#property">프로퍼티</a></li>
-        <li class="menu-dropdown"><a href="#methods">메소드</a></li>
-        <!--<li class="menu-dropdown"><a href="#built-inObj">내장객체</a></li>-->
         <li class="menu-top"><a href="#conditionalStm">조건문</a></li>
-        <li class="menu-dropdown"><a href="#ifElse">if문</a></li>
-        <li class="menu-dropdown"><a href="#switch">switch문</a></li>
-        <li class="menu-top"><a href="#functions">함수</a></li>
-        <li class="menu-dropdown"><a href="#functionDefinition">함수 정의</a></li>
+        <li class="menu-dropdown"><a href="#ifElse">if</a></li>
+        <li class="menu-dropdown"><a href="#switch">switch</a></li>
+        <li class="menu-top"><a href="#loopStm">반복문</a></li>
+        <li class="menu-dropdown"><a href="#forLoop">for</a></li>
+        <li class="menu-dropdown"><a href="#whileLoop">while</a></li>
+        <li class="menu-dropdown"><a href="#doWhileLoop">do...while</a></li>
+        <li class="menu-dropdown"><a href="#break">break</a></li>
+        <li class="menu-top"><a href="#function">함수</a></li>
+        <li class="menu-dropdown"><a href="#funcNotation">함수 표기법</a></li>
+        <li class="menu-dropdown"><a href="#higherOrderFunc">고차함수</a></li>
         <li class="menu-top"><a href="#scope">스코프</a></li>
         <li class="menu-dropdown"><a href="#globalScope">전역 스코프</a></li>
-        <li class="menu-dropdown"><a href="#localScope">지역 스코프</a></li>
-        <!--<li class="menu-top"><a href="#arrays">배열</a></li>-->
-        <!--<li class="menu-top"><a href="#executionContext"></a></li>-->
+        <li class="menu-dropdown"><a href="#localScope">지역 스코프</a></li>-->
+        <li class="menu-top"><a href="#object">객체</a></li>
+        <li class="menu-dropdown"><a href="#property">프로퍼티</a></li>
+        <li class="menu-dropdown"><a href="#method">메소드</a></li>
+        <li class="menu-top"><a href="#array">배열</a></li>
+        <li class="menu-dropdown"><a href="#arrayElement">배열 요소</a></li>
+        <li class="menu-dropdown"><a href="#arrayProperty">배열 프로퍼티</a></li>
+        <li class="menu-dropdown"><a href="#arrayMethod">배열 메소드</a></li>
+        <li class="menu-dropdown"><a href="#arrayIterator">배열 순회 메소드</a></li>
       </ul>
     </nav>
     <div class="main-wrapper">
@@ -73,13 +83,13 @@
           <h1>튜토리얼</h1>
           <p>JavaScript의 문법은 대부분 Java, C, C++로부터 빌려왔습니다. JavaScript에서는 대소문자를 구분하고, Unicode 문자셋을 이용하므로 영어 외의 다양한 언어를 작성할 수 있습니다. 스페이스(space-bar), 탭(tab), 줄바꿈 문자는 공백으로 간주됩니다.</p>
           <p><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Values,_variables,_and_literals#%EA%B8%B0%EB%B3%B8">JavaScript 기본 문법 보기 | MDN</a></p>
-          <section id="statements">
-            <h2>명령문 Statements</h2>
-            <p>프로그램(JavaScript의 스크립트)은 컴퓨터가 단계별로 수행할  명령들의 집합입니다. JavaScript에서 명령은 명령문(statement)으로 부르고, 세미콜론(;)으로 분리합니다. 명령문은 <a href="#variable">var</a>, <a href="#functions">function</a>과 같은 선언 키워드를 사용하여 변수, 함수를 생성하기도 하고 <a href="#ifElse">if</a>, <a href="#">for</a>, <a href="#">while</a> 등의 제어문을 생성하여 프로그램의 흐름을 제어하기도 합니다.</p> 
+          <section id="statement">
+            <h2>명령문 Statement</h2>
+            <p>프로그램(JavaScript의 스크립트)은 컴퓨터가 단계별로 수행할  명령들의 집합입니다. JavaScript에서 명령은 명령문(statement)으로 부르고, 세미콜론(;)으로 분리합니다. 명령문은 <a href="#variable">var</a>, <a href="#function">function</a>과 같은 선언 키워드를 사용하여 변수, 함수를 생성하기도 하고 <a href="#ifElse">if</a>, <a href="#">for</a>, <a href="#">while</a> 등의 제어문을 생성하여 프로그램의 흐름을 제어하기도 합니다.</p> 
             <p>명령문은 블록으로 그룹지을 수 있습니다. 블록이란 조건문, 반복문, 함수처럼 특정한 명령을 수행하는 여러개의 명령문들을 중괄호({})로 한데 묶은 코드를 뜻합니다.</p>
             <pre>
               <code>
-                var z = x + y;
+                let z = x + y;
                 /* 
                 각각의 명령문이 실행되면 해당 명령에 의해 
                 어떠한 일이 발생합니다.
@@ -93,7 +103,7 @@
                   // do sth
                 }
 
-                for(var i = 0; i < 3; i++) {
+                for(let i = 0; i < 3; i++) {
                   // do sth
                 }
                 /* 
@@ -102,8 +112,8 @@
                 */</code>
             </pre>
           </section>
-          <section id="expressions">
-            <h2>표현식 Expressions</h2>
+          <section id="expression">
+            <h2>표현식 Expression</h2>
             <p>표현식은 값, 변수, 프로퍼티, 배열 요소, 함수 호출, 메소드 호출, 피연산자와 연산자의 조합 모두를 아우르는 개념으로, 이들은 하나의 값으로 평가(evaluation)됩니다. 하나의 표현식을 다른 표현식의 일부로 적용하여 더욱 복잡한 표현식을 만들 수 있습니다.</p>
             <pre>
               <code>
@@ -112,14 +122,14 @@
                 표현식은 하나의 값으로 평가할 수 있습니다.
                 */
 
-                var z = x + y;
+                let z = x + y;
                 /* 
                 표현식은 명령문을 구성하는 요소가 될 수 있습니다.
                 */</code>
             </pre>
           </section>
-          <section id="comments">
-            <h2>주석 Comments</h2>
+          <section id="comment">
+            <h2>주석 Comment</h2>
             <p>주석은 공백으로 취급되고 스크립트 실행에서 제외됩니다.</p>
             <pre>
               <code>
@@ -162,7 +172,7 @@
           <p>어떠한 값을 계속 사용(유지, 캐싱)할 필요가 있다면 그 값을 변수(variable)에 담아 사용할 수 있습니다. 변수는 특정한 값을 저장(할당)하고 저장된 값을 참조하기 위해 사용합니다. 즉, 변수는 특정한 값(value)을 메모리에 담아두고 그 값의 위치(메모리 상의 주소, memory address)에 쉽게 접근하기 위해 사람이 이해할 수 있는 언어로 이름(식별자, identifier)을 붙인 뒤 해당 주소에서 값을 불러오는 역할을 맡습니다. 변수와 변수값을 <a href="#variableDeclaring">선언</a>할 때는 선언 키워드(var, let, const), 식별자(identifier), 할당연산자 = (assignment operator), 값(value)을 할당합니다.</p>
           <pre>
             <code>
-                var myName = "Ujin";
+                let myName = "Ujin";
                 console.log(myName); // "Ujin"
 
                 /*
@@ -234,7 +244,7 @@
             <p>변수 선언과 동시에 값을 할당할 수 있지만, 변수 선언을 먼저 한 이후에 값을 할당할 수도 있습니다. 할당이 완료되면 이후 변수는 할당받은 값을 대신 내보냅니다.</p>
             <pre>
               <code>
-                var myName;
+                let myName;
                 myName = "Ujin";
 
                 /*
@@ -246,22 +256,22 @@
             <pre>
               <code>
                 var a;
-                console.log("a는 " + a); 
+                console.log(`a는 ${a}`); 
                 // "a는 undefined"
 
-                console.log("b는 " + b); 
+                console.log(`b는 ${b}`); 
                 var b;
                 // "b는 undefined"
 
-                console.log("c는 " + c); 
+                console.log(`c는 ${c}`); 
                 // ReferenceError: c is not defiend
 
 
                 let x;
-                console.log("x는 " + x); 
+                console.log(`x는 ${x}`); 
                 // "x는 undefined"
 
-                console.log("y는 " + y); 
+                console.log(`y는 ${y}`); 
                 let y;
                 // ReferenceError: Cannot access "y" before initialization</code>
             </pre>
@@ -269,7 +279,7 @@
           <section id="hoisting">
             <h2>호이스팅 Hoisting</h2>
             <p>호이스팅 개념은 <a href="https://jsdev.kr/t/ECMAScript 6/2944">ECMAScript 6</a> 이후 등장했습니다. 호이스팅은 '끌어올리기'로 직역할 수 있습니다. 즉, 함수가 작동할 때 함수 안에서 선언된 변수는 선언된 위치에 상관없이 일단 함수 내의 맨 위로 끌어올려지는 것을 뜻합니다. 끌어올려진 변수는 임의의 값으로 undefined를 할당받습니다. 이후 함수가 실행되면서 undefined값을 할당받은 변수가 사용됩니다. 단, 끌어올려진 변수는 사용되거나 다시 선언되거나, 값을 초기화해도 여전히 undefined를 반환합니다.</p>
-            <p>호이스팅 규칙에 따라 함수 내의 모든 var 변수는 가능한 함수 위 쪽에 작성하는 것이 좋습니다.</p>
+            <p>호이스팅 규칙에 따라 함수 내의 모든 변수정의는 가능한 함수 위 쪽에 작성하는 것이 좋습니다.</p>
             <pre>
               <code>
                 var a = "A";
@@ -302,7 +312,7 @@
 
                 function getA() {
                   console.log("a는 " + a); 
-                  // ReferenceError: Cannot access "A" before initialization
+                  // ReferenceError: Cannot access "A" before initialization at getA
                   let a = "a";
                   console.log("a는 " + a);
                 }
@@ -310,10 +320,10 @@
             </pre>
           </section>
         </article>
-        <article id="dataTypes">
+        <article id="dataType">
           <h1>데이터 타입</h1>
           <p>JavaScript에서 다루는 값은 모두 데이터 타입(Data Types)을 가지고 있습니다. 데이터타입은 프로그래밍 언어에서 사용할 수 있는 값의 종류를 뜻합니다. <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Values,_variables,_and_literals#%EB%8D%B0%EC%9D%B4%ED%84%B0_%EA%B5%AC%EC%A1%B0_%EB%B0%8F_%ED%98%95">JavaScript의 데이터 타입</a>은 기본적으로 7개로 분류합니다. 이 중에서 함수, 배열, 날짜, 정규식은 특별한 종류의 객체 타입으로 구분됩니다.</p>
-          <span>원시 타입 Primitive Data Type</span>
+          <strong>원시 타입 Primitive Data Type</strong>
           <ol>
             <li><a href="#number">숫자 number</a></li>
             <li><a href="#string">문자열 string</a></li>
@@ -322,17 +332,17 @@
             <li><a href="#nullUndefined">undefined</a></li>
             <li>심볼 symbol (ECMAScript 6 이후 등장)</li>
           </ol>
-          <span>객체 타입 Object Data Type</span>
+          <strong>객체 타입 Object Data Type</strong>
           <ol>
             <li><a href="#object">객체 object</a></li>
-            <li><a href="#functions">함수 function</a></li>
-            <li>배열 array</li>
+            <li><a href="#function">함수 function</a></li>
+            <li><a href="#array">배열 array</a></li>
             <li>날짜 date</li>
             <li>정규식 regExp</li>
           </ol>
           <p>JavaScript에서는 변수를 선언할 때 데이터 타입을 따로 지정해주지 않아도 할당된 값의 타입에 의해 자동으로 변수의 타입이 결정됩니다. 이를 동적 타이핑이라 합니다.</p>
           <div class="ex" id="literal">
-            <h3>리터럴 literal</h3>
+            <h3>리터럴 Literal</h3>
             <p>리터럴은 코드 안에서 직접 만들어낸 상수 값 자체를 뜻하며, 값을 구성하는 최소 단위입니다. 원시 타입 리터럴은 연산자로 연산하여 하나의 값이 될 수 있습니다.</p>
             <pre>
               <code>
@@ -386,15 +396,6 @@
               <code>
                 1, 23.42, -7, 0, -0, NaN, Infinity, -Infinity</code>
             </pre>
-            <!--<p>숫자 타입끼리의 계산에는 <a href="#arithmeticOp">산술연산자</a>가 사용됩니다. JavaScript에서 숫자와 문자열 값 사이에 산술연산자 <a href="#addArith">+(add)</a>를 사용해 식을 내면 그 값은 숫자로 반환됩니다. 그 외의 다른 연산자를 포함한 식은 반드시 문자열로 반환하지는 않습니다.</p>
-            <pre>
-              <code>
-                "Answer: " + 38 // "Answer: 38"
-                2019 + "번 고객" // "2019번 고객"
-
-                "12" - 3 // 9
-                "12" + 3 // 123</code>
-            </pre>-->
             <div class="ex" id="convertToNum">
               <h3>Number(), parseFloat(), parseInt()</h3>
               <p>Number(), parseFloat(), parseInt()는 데이터의 첫글자부터 데이터를 숫자 타입으로 변환합니다.<br>데이터의 첫글자가 숫자로 나타낼 수 없는 문자열(알파벳, 공백 등)이라면 NaN을 출력합니다.</p>
@@ -451,7 +452,7 @@
             </div>
             <div class="ex" id="math">
               <h3>Math()</h3>
-              <p>Math()는 수학적인 상수와 함수를 간단한 식으로 나타내거나 변환할 수 있는 <!--<a href="#built-inObj">-->내장객체<!--</a>-->입니다.</p>
+              <p>Math()는 수학적인 상수와 함수를 간단한 식으로 나타내거나 변환할 수 있는 내장객체입니다.</p>
               <pre>
                 <code>
                 Math.E(); // 자연상수 e (2.71...)
@@ -503,7 +504,7 @@
                 */</code>
               </pre>
             </div>
-            <div class="ex" id="stringWorks">
+            <div class="ex" id="stringMethods">
               <h3>.length</h3>
               <p>문자열의 길이(개수)값, 또는 배열의 요소 개수를 반환합니다.</p>
               <pre>
@@ -549,7 +550,7 @@
           </section>
           <section id="boolean">
             <h2>불리언 Boolean</h2>
-            <p>불리언은 데이터에 대한 조건이 참 또는 거짓(true or false, yes or no)을 나타냅니다. 이 조건을 불리언값 또는 진리값이라 부릅니다. 주로 서로 다른 데이터값의 일치 여부를 확인하기 위해 다양한 <a href="#operators">연산자</a>와 함께 사용합니다.</p>
+            <p>불리언은 데이터에 대한 조건이 참 또는 거짓(true or false, yes or no)을 나타냅니다. 이 조건을 불리언값 또는 진리값이라 부릅니다. 주로 서로 다른 데이터값의 일치 여부를 확인하기 위해 다양한 <a href="#operator">연산자</a>와 함께 사용합니다.</p>
             <pre>
               <code>
                 1 === 1 // true
@@ -557,7 +558,7 @@
             </pre>
             <div class="ex" id="truthyFalsy">
               <h3>불리언이 아닌 데이터 타입의 진리값 Truthy & Falsy</h3>
-              <p>데이터 타입이 정확히 불리언은 아니지만 거짓으로 판정되는 값을 falsy값이라 부르고, 나머지 값을 truthy값이라 부릅니다. JavaScript는 아래의 데이터 타입을 falsy 값으로 판단합니다.</p>
+              <p>데이터 타입이 정확히 불리언은 아니지만 false로 판정되는 값을 falsy값이라 부르고, 나머지 값을 truthy값이라 부릅니다. JavaScript는 아래의 데이터 타입을 falsy 값으로 판단합니다.</p>
               <ol>
                 <li>false (boolean)</li>
                 <li>null (null-object)</li>
@@ -568,7 +569,7 @@
                 <li>document.all (object)</li>
               </ol>
             </div>
-            <div class="ex" id="arithmeticOpTF">
+            <div class="ex" id="arithOpTruthyFalsy">
               <h3><a href="#arithmeticOp">산술연산자</a>로 진리값 확인하기</h3>
               <p>진리값을 산술연산자로 계산할 때 true(truthy)는 숫자 1, false(falsy)는 숫자 0으로 변환되어 계산됩니다.</p>
               <pre>
@@ -632,7 +633,7 @@
             </div>
           </section>
         </article>
-        <article id="operators">
+        <article id="operator">
           <h1>연산자</h1>
           <p>JavaScript에서 주로 쓰이는 연산자는 아래와 같습니다.</p>
           <ol>
@@ -642,8 +643,8 @@
             <li><a href="#logicalOp">논리연산자</a></li>
           </ol>
           <section id="arithmeticOp">
-            <h2>산술연산자 Arithmetic Operators</h2>
-            <p>산술연산자는 마치 계산기처럼 주로 간단한 숫자 계산을 할 때 사용하는 연산자입니다. 산술연산자는 숫자, 문자열, 또는 변수(variables)를 피연산자(operators)로 넣을 수 있고, 그 결과값을 숫자 또는 문자열로 반환합니다. 피연산자의 타입과 연산자의 종류에 따라 결과값의 타입이 달라집니다. 따라서 연산 전에 피연산자를 미리 <a href="#convertToNum">숫자로 변환</a>해두어야 일관적인 결과값을 얻을 수 있습니다.</p>
+            <h2>산술연산자 Arithmetic Operator</h2>
+            <p>산술연산자는 마치 계산기처럼 주로 간단한 숫자 계산을 할 때 사용하는 연산자입니다. 산술연산자는 숫자, 문자열, 또는 변수(variables)를 피연산자(operator)로 넣을 수 있고, 그 결과값을 숫자 또는 문자열로 반환합니다. 피연산자의 타입과 연산자의 종류에 따라 결과값의 타입이 달라집니다. 따라서 연산 전에 피연산자를 미리 <a href="#convertToNum">숫자로 변환</a>해두어야 일관적인 결과값을 얻을 수 있습니다.</p>
             <pre>
               <code>
                 2 + 3 - 1; // 4
@@ -738,7 +739,7 @@
                 (2 ** 2) ** 3 // 64</code>
               </pre>
             </div>
-            <div class="ex" id="incre_decrementArith">
+            <div class="ex" id="increDecreArith">
               <h3>증가 ++, 증감 -- Increment, Decrement</h3>
               <p>증가, 증감 연산자는 피연산자1의 뒤에 붙으면 피연산자2의 값을 계산 전 값으로 반환하고, 피연산자1의 앞에 붙으면 피연산자2의 값을 계산 후 값으로 반환합니다.</p>
               <pre>
@@ -756,7 +757,7 @@
             </div>
           </section>
           <section id="assignmentOp">
-            <h2>할당연산자 Assignment Operators</h2>
+            <h2>할당연산자 Assignment Operator</h2>
             <p>할당연산자는 연산자 기준으로 오른쪽 피연산자의 값을 왼쪽의 피연산자에 할당합니다.</p>
             <pre>
               <code>
@@ -858,7 +859,7 @@
             </div>
           </section>
           <section id="comparisonOp">
-            <h2>비교연산자 Comparison Operators</h2>
+            <h2>비교연산자 Comparison Operator</h2>
             <p>서로 다른 두 값을 비교할 때 사용하는 비교연산자는 두 종류, 엄격한 비교(strict comparison)와 형변환 비교(abstract comparison)로 나뉩니다. 엄격한 비교는 피연산자끼리 동일한 값과 데이터타입을 가져야만 true를 출력하고, 형변환은 비교 전 피연산자들을 같은 자료형으로 바꾼 뒤 엄격한 비교를 진행합니다.<br>엄격한 비교연산자는 형변환 비교연산자의 뒤에 = 하나를 더 붙입니다.</p>
             <div class="ex" id="equalityIdentity">
               <h3>동등 ==, 일치 === Equality, Identity</h3>
@@ -880,7 +881,7 @@
               </pre>
             </div>
             <div class="ex" id="inequalityNonIdentity">
-              <h3>부등 !=, 불일치 !== inequality, Non-Identity</h3>
+              <h3>부등 !=, 불일치 !== Inequality, Non-Identity</h3>
               <pre>
                 <code>
                 1 != 2
@@ -894,7 +895,7 @@
               </pre>
             </div>
             <div class="ex" id="relationalOp">
-              <h3>관계 >, <, >=, <= Relational Operators</h3>
+              <h3>관계 >, <, >=, <= Relational Operator</h3>
               <pre>
                 <code>
                 3 > 3 
@@ -906,7 +907,7 @@
             </div>
           </section>
           <section id="logicalOp">
-            <h2>논리연산자 Logical Operators</h2>
+            <h2>논리연산자 Logical Operator</h2>
             <p>논리연산자는 진리값을 가진(또는 truthy & falsy 값을 반환하는) 두 피연산자의 집합을 관계지은 뒤, 주로 진리값 또는 다른 데이터형으로 출력합니다. 논리연산자가 포함된 논리표현식은 왼쪽부터 오른쪽 방향으로 진행됩니다.</p>
             <div class="ex" id="logicalAnd">
               <h3>&& AND</h3>
@@ -992,7 +993,7 @@
               </pre>
             </div>
             <div class="ex" id="logicalExprShortC">
-              <h3>논리표현식 단락 평가 Logical Expressions Short-circuit</h3>
+              <h3>논리표현식 단락 평가 Logical Expression Short-Circuit</h3>
               <p>논리연산자를 사용하는 논리표현식은 왼쪽부터 오른쪽 방향으로 진행되므로, 피연산자1에서 표현식 진행이 마무리 되면 다음 피연산자2를 계산할 필요가 없습니다. 따라서 되도록 계산을 빨리하기 위해 피연산자1만 계산하도록 하는 단락 평가를 수행합니다.</p>
               <pre>
                 <code>
@@ -1021,120 +1022,80 @@
             </div>
           </section>
         </article>
-        <article id="object">
-          <h1>객체</h1>
-          <p>객체(object)는 마치 컨테이너 박스처럼 한꺼번에 여러 값을 담을 수 있는 구조를 지닌 데이터 타입입니다. JavaScript의 객체는 키(이름)와 값으로 구성된 <a href="#property">프로퍼티(property)의 집합입니다. 객체는 각각 데이터와 액션의 역할을 수행하는 프로퍼티와 메소드를 모두 포함할 수 있기 때문에 이들을 각각이 아닌 하나의 단위로 구조화할 수 있습니다.</a></p>
-          <pre>
-            <code>
-                const weather = {
-                  city: "Seoul"
-                  temperature: "20" + "℃"
-                  todayWeather: function() {
-                    console.log(this.city + " is " + this.temperature + " today.");
-                  }
-                }   
-                
-                /*
-                weather는 객체의 이름입니다.
-                weather의 프로퍼티는 city, temperature, todayWeather 이고
-                todayWeather는 메소드입니다.
-                */</code>
-          </pre>
-          <section id="property">
-            <h2>프로퍼티 Property</h2>
-            <p>프로퍼티는 객체에서 변수처럼 이름 붙여지는 객체의 데이터들입니다. 객체의 이름(name) 뒤에 .(점 연산자, dot operator)를 쓰고 프로퍼티를 붙입니다. JavaScript에서 사용할 수 있는 모든 값은 프로퍼티가 될 수 있습니다.</p>
-            <pre>
-              <code>
-                const weather = {
-                  city: "Seoul"
-                  temperature: "20" + "℃"
-                  todayWeather: function() {
-                    console.log(this.city + " is " + this.temperature + " today.");
-                  }
-                }   
-                
-                /*
-                프로퍼티는 객체의 데이터를 뜻합니다.
-                this 뒤에 weather의 프로퍼티가 사용되었습니다.
-                */</code>
-            </pre>
-          </section>
-          <section id="methods">
-            <h2>메소드 Methods</h2>
-            <p>객체에서 쓰이는 프로퍼티 값이 함수일 경우 일반 함수와 구분하기 위해 메소드라고 부릅니다. 메소드는 프로퍼티의 역할을 하기 때문에 프로퍼티처럼 객체의 이름 뒤에 .(점 연산자)를 쓴 뒤 메소드를 붙입니다.</p>
-            <pre>
-              <code>
-                const weather = {
-                  city: "Seoul"
-                  temperature: "20" + "℃"
-                  todayWeather: function() {
-                    console.log(this.city + " is " + this.temperature + " today.");
-                  }
-                }   
-                weather.todayWeather(); // "Seoul is 20℃ today."</code>
-            </pre>
-          </section>
-          <!--<section id="built-inObj">
-            <h2>내장객체 Built-in Objects</h2>
-            <p>개발자가 새로운 객체를 직접 만들고 이름붙일 수 있지만, JavaScript에는 이미 내장된 객체들이 많이 있습니다.</p>
-          </section>-->
-        </article>
         <article id="conditionalStm">
           <h1>조건문</h1>
+          <p>조건문(conditional statement)은 주어진 조건식(conditional expression)의 평가 결과에 따라 블록문의 실행 여부를 결정합니다. 조건식은 불리언값으로 평가될 수 있는 표현식입니다. JavaScript에서 조건문은 크게 if문과 switch문으로 표현합니다.</p>
           <section id="ifElse">
-            <h2>if문</h2>
-            <p>if문은 미리 지정된 변수를 자식개체로 삼아 ()에 넣고, 자식개체의 진리값(true & false, truthy & falsy)에 따라 어떤 행동을 출력할 지 중괄호({})에 적어냅니다. if문의 a값이 참이면 첫 번째 행동을, 거짓이면 else에 적힌 두 번째 행동을 출력합니다. 중간에 else if()를 추가해 조건을 여러 개 걸어놓을 수 있습니다.</p>
+            <h2>if...else</h2>
+            <p>if문은 미리 지정된 변수를 자식개체로 삼아 ()에 넣고, 자식개체의 진리값(true & false, truthy & falsy)에 따라 어떤 행동을 출력할 지 중괄호({})에 적어냅니다. if문의 a값이 true이면 첫 번째 행동을, false이면 else에 적힌 두 번째 행동을 출력합니다. 중간에 else if()를 추가해 조건을 여러 개 걸어놓을 수 있습니다.</p>
             <pre>
               <code>
                 let a = true;
 
                 if (a) {
                   console.log("a is true!");
+                  return a * 2;
                 } else if(a == 0) {
                   console.log("a is zero!");
+                  return a;
                 } else {
-                  console.log("a is false!")
+                  console.log("a is false!");
+                  return typeof(a);
                 }
 
                 // "a is true!"</code>
             </pre>
-            <div class="ex" id="truthyFalsyAssignment">
+            <p>블록문이 간단하게 표현되는 한 줄이라면 중괄호를 생략할 수 있습니다.</p>
+            <pre>
+              <code>
+                let a = true;
+
+                if (a)          console.log("a is true!");
+                else if(a == 0) console.log("a is zero!");
+                else            console.log("a is false!");
+                
+                // "a is true!"</code>
+            </pre>
+            <div class="ex" id="truthyFalsyAssign">
               <h3>논리연산자를 이용한 조건문 Truthy & Falsy Assignment</h3>
-              <p><a href="#logicalOr">논리연산자 ||(or)</a>를 사용해 조건문을 만들 수 있습니다. ||는 왼쪽에서부터 오른쪽으로 진행되면서 true값을 반환합니다.</p>
+              <p><a href="#logicalOr">논리연산자 ||(or)</a>를 사용해 조건문을 만들 수 있습니다. ||는 왼쪽에서부터 오른쪽으로 진행되면서 true값을 반환합니다. 조건 결과가 true이면 피연산자1을, || false이면 피연산자2를 반환합니다.</p>
               <pre>
                 <code>
-                let name = "";
+                let name = "Ujin";
                 let userId = name || "익명의 사용자";
-
-                console.log(`${userId}님이 로그인 하셨습니다.`);
-                // "익명의 사용자님이 로그인하셨습니다."
-
-                name = "Ujin";
-                userId = name || "익명의 사용자";
                 
                 console.log(`${userId}님이 로그인 하셨습니다.`);
+                
                 // "Ujin님이 로그인하셨습니다."</code>
               </pre>
             </div>
             <div class="ex" id="ternaryOp">
-              <h3>삼항 연산자 ternary Operator</h3>
-              <p>삼항 연산자는 세 개의 피연산 함수를 쓸 수 있는 연산자입니다. 조건이 true이면 ? 피연산자1을, : 아니라면 피연산자2를 반환합니다.</p>
+              <h3>삼항 연산자 Ternary Operator</h3>
+              <p>대부분의 if문은 삼항 연산자로 바꿔쓸 수 있습니다. 삼항 연산자는 세 개의 피연산 함수를 쓸 수 있는 연산자입니다. 조건 결과가 true이면 ? 피연산자1을, : false이면 피연산자2를 반환합니다.</p>
               <pre>
                 <code>
-                let name = "";
-                let userId = name || "익명의 사용자";
+                let name = "Ujin";
+                let userId = name || "";
 
-                name ? console.log(`${userId}님, 안녕하세요!`) : console.log(`로그인이 필요합니다.`);</code>
+                const welcome = name ? console.log(`${userId}님, 안녕하세요!`) : console.log(`ID를 입력해주세요.`);</code>
+              </pre>
+              <p>삼항 연산자로 세 가지 경우의 수를 표현할 때는 두 가지 경우의 수를 표현한 표현식을 피연산자1로 넣고 남은 경우의 수를 피연산자2로 넣습니다.</p>
+              <pre>
+                <code>
+                let name = "Ujin";
+                let userId = name || "";
+
+                const welcome = name ? (name !== "운영자" ? console.log(`${userId}님, 안녕하세요!`) : console.log(`관리 모드로 로그인했습니다.`) : console.log(`ID를 입력해주세요.`);</code>
               </pre>
             </div>
           </section>
           <section id="switch">
-            <h2>switch문</h2>
-            <p>조건문의 조건이 단일의 숫자나 문자열처럼 비교적 단순한 구조라면 switch문으로 더욱 간단하게 표현할 수 있습니다. switch문에서는 각 조건(case)이 끝날 때마다 break;를 반드시 써야합니다.</p>
+            <h2>switch</h2>
+            <p>조건문의 조건이 단일의 숫자나 문자열처럼 비교적 단순한 구조라면 switch문으로 더욱 간단하게 표현할 수 있습니다. switch문의 표현식은 진리값보다 다양한 case에 따라 실행할 블록문을 결정합니다. case에는 표현식의 결과값을 적고, 결과값은 또 다른 표현식이 될 수 있습니다. switch문의 표현식과 일치하는 case 표현식이 없다면 switch문의 맨 마지막에 위치한 default문으로 이동합니다.</p>
+            <p>switch문에서는 각 조건(case)이 끝날 때마다 <a href="#break">break</a>를 반드시 써야합니다. break를 쓰지 않으면 switch문이 끝날 때까지 모든 case문과 default문을 차례로 실행하고, 가장 마지막의 case(주로 default)를 실행합니다. 이를 폴 스루(fall through)라고 합니다. default문이 실행되면 switch문이 종료되므로 default문에는 <a href="#break">break</a>를 쓰지 않아도 됩니다.</p>
             <pre>
               <code>
-                let name = "";
-                let weather;
+                let weather = "";
 
                 switch (weather) {
                   case "sunny":
@@ -1148,14 +1109,273 @@
                     break;
                   default:
                     console.log("How"s the weather outside?");
+                }</code>
+            </pre>
+            <p>switch문에서 case 여러 개가 같은 결과값을 나타내도록 하려면 case 옆에 다른 case를 붙여서 작성합니다.</p>
+            <pre>
+              <code>
+                let weather = "";
+
+                switch (weather) {
+                  case "sunny": case "cloudy"
+                    console.log("Great to walk!");
                     break;
+                  case "gloomy": case "windy"
+                    console.log("Not so bad.");
+                    break;
+                  case "rainy": case "snowy"
+                    console.log("Take your umbrella!");
+                    break;
+                  default:
+                    console.log("How"s the weather outside?");
                 }</code>
             </pre>
           </section>
         </article>
-        <article id="functions">
+        <article id="loopStm">
+          <h1>반복문</h1>
+          <p>반복문(loop statement)은 주어진 조건식의 평가 결과가 true이면 블록문을 실행합니다. 이후 조건식을 다시 검사하며 조건식의 평가 결과가 false일 때까지 블록문을 반복 실행합니다. JavaScript에서 반복문은 크게 for문과 while문, do...while문으로 표현합니다.</p>
+          <section id="forLoop">
+            <h2>for</h2>
+            <p>for문은 가장 일반적으로 사용되는 반복문입니다. for문의 조건식은 ()안에 넣고, 조건식의 평가 결과가 true이면 블록문을 실행합니다. 조건식의 평가 결과가 false이라면 블록문을 실행하지 않습니다. for문은 변수를 초기화하는 초기화식(initialization), 조건식(stopping condition), 증감식(iteration statement), 블록문으로 구분됩니다. 각각의 표현식은 세미콜론;으로 나뉩니다. for문에 어떤 식도 선언하지 않으면 무한 루프가 됩니다. 무한루프가 우려될 때 <a href="#switch">switch문</a>과 마찬가지로 <a href="#break">break</a>로 블록문을 탈출합니다.</p>
+            <p>for문의 실행 순서는 아래와 같습니다.</p>
+            <ol>
+              <li>초기화식 실행</li>
+              <li>조건식 평가</li>
+              <li>true, 블록문 실행</li>
+              <li>증감식 실행</li>
+              <li>다시, 조건식 평가</li>
+              <li>false, for문 종료</li>
+            </ol>
+            <pre>
+              <code>
+                for(let i = 1; i < 4; i++) {
+                  console.log(i + "번째 반복");
+                }
+
+                // 1번째 반복
+                // 2번째 반복
+                // 3번째 반복
+
+                /* 
+                let i = 0; => 초기화식
+                i < 3; => 조건식
+                i++; => 증감식
+                {} => 블록문
+                */</code>
+            </pre>
+            <div class="ex" id="loopReverse">
+              <h3>반복 감소문 Loop Backwards</h3>
+              <p>증감문에서 변수에 ++이 아닌 --를 사용하면 변수가 조건식의 최대값이 아닌 최소값이 될 때 까지 반복문이 실행됩니다.</p>
+              <pre>
+                <code>
+                for(let i = 3; i >= 0; i--) {
+                  console.log((i + 1) + "번 남음");
+                }
+
+                // 3번 남음
+                // 2번 남음
+                // 1번 남음
+                // 0번 남음</code>
+            </pre>
+            </div>
+            <div class="ex" id="nestedLoops">
+              <h3>내부 for문 Nested for Loops</h3>
+              <p>for문 안에 for문을 중첩해서 사용할 수 있습니다. 두 조건식의 평가 결과값을 비교하거나 경우의 수를 구할 때 주로 사용합니다. 내부 for문 안에 if문을 넣어 비교 조건을 통과한 값을 출력하기도 합니다.</p>
+              <p>내부 if문이 포함된 내부 for문의 실행 순서는 구구단 행렬을 만들 때와 비슷합니다. 구체적인 순서는 아래와 같습니다.</p>
+              <ol>
+                <li>forA 초기화식 실행, forA 조건식 평가</li>
+                <li>true, forA 블록문 (forB) 실행</li>
+                <li>forB 초기화식 실행, forB 조건식 평가</li>
+                <li>true, forB 블록문 (if문) 실행</li>
+                <li>if문 조건식 평가</li>
+                <li>true, if문 블록문 실행 / false, if문 종료</li>
+                <li>forB 증감식 실행</li>
+                <li>다시, forB 조건식 평가</li>
+                <li>false, forB 종료</li>
+                <li>forA 증감식 실행</li>
+                <li>다시, forA 조건식 평가</li>
+                <li>false, forA 종료</li>
+              </ol>
+              <pre>
+                <code>
+                for(let i = 1; i <= 12; i++) {
+                  for(let j = 1; j <= 5; j++) {
+                    if(i + j === 5) console.log(`[${i}, ${j}]`);
+                  } 
+                }
+
+                // [1, 4]
+                // [2, 3]
+                // [3, 2]
+                // [4, 1]
+
+                /*
+                변수값의 변화 과정은 아래와 같습니다.
+                i = 1 : j = 1, 2, 3, 4 / [1, 4] / 5
+                i = 2 : j = 1, 2, 3 / [2, 3] / 4, 5
+                i = 3 : j = 1, 2 / [3, 2] / 3, 4, 5
+                i = 4 : j = 1 / [4, 1] / 2, 3, 4, 5
+                i = 5 : j = 1, 2, 3, 4, 5
+                i = 6 : j = 1, 2, 3, 4, 5
+                .
+                .
+                .
+                */</code>
+              </pre>
+            </div>
+          </section>
+          <section id="whileLoop">
+            <h2>while</h2>
+            <p>while문은 for문과 비슷하게 작동합니다. 대신 초기화식을 while문 바깥 위에 미리 선언하고, 블록문 안에 증감식을 넣습니다. 조건식의 결과값이 언제나 true이면 무한루프가 됩니다. 무한루프가 우려될 때 <a href="#switch">switch문</a>과 마찬가지로 <a href="#break">break</a>로 블록문을 탈출합니다.</p>
+            <pre>
+              <code>
+                let i = 1; 
+                while(i < 4) {
+                  console.log(i + "번째 반복");
+                  i++;
+                }
+
+                // 1번째 반복
+                // 2번째 반복
+                // 3번째 반복</code>
+            </pre>
+            <p>while문은 특정한 반복 횟수를 정하지 않고 원하는 값이 나올 때까지 계속 블록문을 반복하고 싶을 때 자주 사용합니다.</p>
+            <pre>
+              <code>
+                const season = ["spring", "summer", "fall", "winter"]; 
+                let seasonWant;
+                while(seasonWant !== "spring") {
+                  seasonWant = season[Math.floor(Math.random() * 4)];
+                  console.log(seasonWant); 
+                }
+
+                /*
+                원하는 계절이 나올 때까지 랜덤하게 계절을 보여줍니다.
+                */</code>
+            </pre>
+          </section>
+          <section id="doWhileLoop">
+            <h2>do...while</h2>
+            <p>do while문은 do의 블록문을 우선 실행한 뒤에 조건식을 평가합니다. 따라서 블록문은 조건의 결과값에 상관없이 무조건 처음에 한 번 실행됩니다.</p>
+            <p>do while문의 진행 순서는 아래와 같습니다.</p>
+            <ol>
+              <li>초기화식 실행</li>
+              <li>조건식 평가</li>
+              <li>true, 블록문 실행</li>
+              <li>증감식 실행</li>
+              <li>다시, 조건식 평가</li>
+              <li>false, for문 종료</li>
+            </ol>
+            <pre>
+              <code>
+                let i = 1;
+                do {
+                  i++;
+                  console.log(i + "번째 반복");
+                } while(i < 4)
+
+                // 2번째 반복
+                // 3번째 반복
+                // 4번째 반복</code>
+            </pre>
+          </section>
+          <section id="break">
+            <h2>break</h2>
+            <p>break는 반복문, <a href="#labelStm">label문(label statement)</a>의 블록문을 탈출하기 위해 사용합니다. 반복문에서는 break만, label문에서는 break 뒤에 label 식별자를 추가해서 작성합니다. 위 경우의 블록문이 없는 if문, 함수 등의 블록문에 break문을 사용하면 SyntaxError가 발생합니다.</p>
+            <pre>
+              <code>
+                for(let i = 0; i < 4; i++) {
+                  if(i === 2) {
+                    console.log(i);
+                    break;
+                  }
+                  console.log(i);
+                }
+                console.log("I found the answer!");
+              
+                // 0
+                // 1
+                // 2
+                // I found the answer!
+
+
+                let j = 2;
+                if(j === 2) {
+                  console.log(i);
+                  break; // Uncaught SyntaxError : Illegal break statement
+                }</code>
+            </pre>
+            <div class="ex" id="labelStm">
+              <h3>label</h3>
+              <p>label문은 식별자가 맨 앞에 붙은 문을 말합니다. switch문의 case, default도 label문에 속합니다. label문을 break로 탈출하기 위해서는 break 뒤에 label문의 식별자를 추가합니다.</p>
+              <pre>
+                <code>
+                labelA: console.log("label A");
+
+                /* label문은 식별자가 앞에 붙은 문을 뜻합니다. */
+
+
+                labelB: {
+                  console.log("label B-1");
+                  break labelB;
+                  console.log("label B-2");
+                }
+                console.log("I found the answer!");
+
+                // label B-1
+                // I found the answer!
+                /* 
+                label문에서 break를 사용하려면
+                break 뒤에 label 식별자를 추가합니다. 
+                */</code>
+              </pre>
+              <p>label문은 <a href="#nestedLoops">내부 for문</a>에서 외부 for문을 종료할 때 유용합니다. 그 외에는 label문의 사용을 권장하지 않는데, 프로그램 흐름이 복잡해지고 가독성이 나빠지기 때문입니다.</p>
+              <pre>
+                <code>
+                forA: for(let i = 0; i < 4; i++) {
+                  for(let j = 0; j < 2; j++) {
+                    if(i + j === 2) {
+                      console.log(`[${i}, ${j}]`)
+                      break forA;
+                    }
+                  }
+                }
+                console.log("I found the answer!");
+
+                // [1, 1]
+                // I found the answer!
+                /* 
+                내부 반복문에서 외부 반복문을 종료시킬 때
+                label문을 사용하면 편리합니다.
+                그렇지만, 다소 가독성이 떨어집니다.
+                */</code>
+              </pre>
+            </div>
+            <div class="ex" id="continueStm">
+              <h3>continue</h3>
+              <p>continue문은 반복문의 블록문 실행을 중단하고 반복문의 증감식으로 이동하게 합니다. <a href="#break">break</a>처럼 반복문을 탈출하지는 않고, 블록문 중간에 실행을 중단한 뒤 다음 조건을 바로 알아보고싶을 때 유용합니다.</p>
+              <pre>
+                <code>
+                for(let i = 0; i < 4; i++) {
+                  if(i !== 2) continue;
+                  console.log((i + 1) + "번째 반복");
+                }
+
+                // 3번째 반복
+
+                /* 위 예제는 아래와 같습니다. */
+
+                for(let i = 0; i < 4; i++) {
+                  if(i === 2) console.log((i + 1) + "번째 반복");
+                }</code>
+              </pre>
+            </div>
+          </section>
+        </article>
+        <article id="function">
           <h1>함수</h1>
-          <p>함수는 스크립트 안에서 특별한 역할을 수행하는 명령문을 한데 모은 블록문이며, 데이터 타입은 객체 타입의 함수 타입입니다. 함수는 키워드 function 으로 선언한 뒤 함수명 식별자(identifier), 함수 안에서 쓰일 매개변수(parameter), 함수 안의 명령문(statements)으로 구성됩니다. 함수는 블록문 이후 함수를 호출해야 실행됩니다.</p>
+          <p>함수는 스크립트 안에서 특별한 역할을 수행하는 명령문을 한데 모은 블록문이며, 데이터 타입은 객체 타입의 함수 타입입니다. 함수는 키워드 function 으로 선언한 뒤 함수명 식별자(identifier), 함수 안에서 쓰일 매개변수(parameter), 함수 안의 명령문(statement)으로 구성됩니다. 함수는 블록문 이후 함수를 호출해야 실행됩니다. 함수를 호출할 때는 함수명을 사용하는데, 특정 값을 얻고싶을 때 함수에 적용할 인수(arguement)가 필요한 경우도 있습니다.</p>
           <p>함수는 기본값으로 undefined를 갖고있지만, 특정한 값을 반환하고 싶다면 return문이 함수 블록문 안에 있어야 합니다.</p>
           <pre>
             <code>
@@ -1164,7 +1384,7 @@
                 }
                 funcA(); // "Function A is working!"
                 /*
-                function 기본문
+                function 기본문 + 호출
                 */
 
                 function getArea(width, height) {
@@ -1172,7 +1392,7 @@
                 }
                 getArea(60, 20); // 1200
                 /*
-                function 기본문 + param
+                function 기본문 + param + 호출 + 인수
                 */
 
                 function timeFlies(year){
@@ -1181,52 +1401,130 @@
                 }
                 timeFlies(); // if (year = 2019) {yearAgo = 2018}
                 /*
-                function 기본문 + param + return
+                function 기본문 + param + return + 호출
                 */</code>
           </pre>
-          <section id="functionDefinition">
-            <h2>함수 정의 Function Definition</h2>
-            <p>아래의 예제들은 함수를 더욱 간단하게 쓸 수 있도록 ECMAScript 6 이후 등장한 함수 정의 방법들입니다. 그러나 브라우저간 호환성 문제가 있기 때문에 로컬 작업에만 사용할 것을 권장합니다.</p>
-            <div class="ex" id="functionExpr">
-              <h3>함수표현식 Function Expressions</h3>
-              <p>함수표현식의 문법은 함수 기본문과 거의 같습니다. 앞에 선언 키워드로 식별자를 선언한 뒤, function 키워드를 param 앞에 붙입니다.</p>
-              <pre>
-                <code>
-                var getArea = function(width, height) {
-                  var area = width * height;
-                  return area;
-                }</code>
-              </pre>
-            </div>
-            <div class="ex" id="functionArrow">
+          <p>JavaScript의 함수는 일급 객체입니다. 일급 객체의 특징들을 이용해서 <a href="#funcExpr">함수표현식</a>, <a href="#higherOrderFunc">콜백함수</a> 등 함수를 다양하게 응용할 수 있습니다. 일급 객체는 아래와 같은 특징을 지닙니다. </p>
+            <ol>
+              <li>식별자 없이 익명의 리터럴로 표현하기</li>
+              <li>변수나 자료 구조(객체, 배열 등)에 할당, 저장하기</li>
+              <li>다른 함수의 파라미터로 전달하기</li>
+              <li>return 값으로 사용하기</li>
+            </ol>
+          <section id="funcExpr">
+            <h2>함수표현식 Function Expression</h2>
+            <p>함수가 일급 객체라는 특징을 응용해서 함수를 익명의 리터럴 방식으로 정의하고, 변수의 할당값에 함수를 할당할 수 있습니다. 이러한 표현 방식을 함수표현식이라 합니다. 함수표현식의 문법은 함수 기본문과 거의 같습니다. 앞에 선언 키워드로 식별자를 선언한 뒤, function 키워드를 param 앞에 붙입니다. 이를 다른 말로 익명 함수표현식(anonymous function expression)이라 부릅니다. 일반 함수 작성 문법처럼 function 키워드 뒤에 함수명을 쓸 수도 있습니다. 이를 가명 함수표현식(named function expression)이라 합니다. 일반적으로는 익명 함수표현식을 사용합니다. 가명 함수표현식은 변수명과 함수명이 다른데, 변수명에 name 프로퍼티를 사용해서 할당된 함수명을 반환할 수 있습니다.</p>
+            <pre>
+              <code>
+                const getArea1 = function(width, height) { 
+                  return width * height;
+                }
+
+                /* 일반적으로 함수표현식은 함수명 식별자를 생략합니다. */
+
+
+                const getArea2 = function multiply(width, height) { 
+                  return width * height;
+                }
+                console.log(getArea2.name); // multiply
+
+                /* 
+                함수명 식별자를 그대로 쓸 수도 있습니다. 
+                할당된 함수명을 알아내기 위해
+                변수명.name 프로퍼티를 사용합니다.
+                */</code>
+            </pre>
+            <p>변수에 함수를 할당하면 변수는 함수명이 아니라 할당된 함수를 가리키는 참조값을 저장합니다. 함수표현식으로 작성된 함수를 호출할 때는 함수명이 아니라 함수를 가리키는 변수명을 사용합니다.</p>
+            <pre>
+              <code>
+                const getAreaA = function(width, height) { 
+                  return width * height;
+                }
+                console.log(getArea1(10, 10)); // 100
+
+
+                const getArea2 = function multiply(width, height) { 
+                  return width * height;
+                }
+                console.log(Multiply(10, 10)); 
+                // Uncaught ReferenceError: multiply is not defined
+
+                /* 
+                함수표현식으로 작성된 함수를 호출할 때는
+                함수명이 아니라, 함수를 할당한 변수명을 사용합니다.
+                 */</code>
+            </pre>
+            <p>아래의 예제들은 함수를 더욱 간단하게 쓸 수 있도록 ECMAScript 6 이후 등장한 함수 표현식입니다. 그러나 브라우저간 호환성 문제가 있기 때문에 호환성을 확인한 뒤 사용하거나 로컬 작업에만 사용할 것을 권장합니다.</p>
+            <div class="ex" id="funcArrow">
               <h3>화살표 함수식 Arrow Function Notation</h3>
               <p>함수표현식에서 function 키워드가 arrow로 바뀌고, arrow는 param 뒤에 붙습니다.</p>
               <pre>
                 <code>
-                var getArea = (width, height) => {
-                  var area = width * height;
-                  return area;
+                const getArea = (width, height) => {
+                  return width * height;
+                }
+
+
+                /* 이 함수식은 아래와 같습니다. */
+
+                const getArea = function(width, height) {
+                  return width * height;
+                }
+
+                function getArea(width, height) {
+                  return width * height;
                 }</code>
               </pre>
             </div>
-            <div class="ex" id="functionConciseArrow">
+            <div class="ex" id="funcConciseArrow">
               <h3>축약 화살표 함수식 Concise Arrow Notation</h3>
-              <p>더욱 축약된 함수식은 함수 안에 따로 return값을 선언하지 않고도 함수값을 출력합니다.</p>
+              <p>더욱 축약된 함수식은 함수 안에 따로 return값을 선언하지 않고도 함수값을 출력합니다. 중괄호도 제외됩니다. ECMAScript 6에서는 이 표현식을 사용할 것을 권장합니다.</p>
               <pre>
                 <code>
-                var getArea = (width, height) => {
-                  var area = width * height;
-                  return area;
-                }
-                /*
-                이 함수식은 아래와 같습니다.
-                */
+                const getArea = (width, height) => width * height;
 
-                var getArea = (width, height) => width * height;</code>
+
+                /* 이 함수식은 아래와 같습니다. */
+
+                const getArea = (width, height) => {
+                  return width * height;
+                }
+
+                const getArea = function(width, height) {
+                  return width * height;
+                }
+
+                function getArea(width, height) {
+                  return width * height;
+                }</code>
               </pre>
             </div>
           </section>
-        </article>
+          <section id="higherOrderFunc">
+            <h2>고차함수 Higher-Order Function</h2>
+            <p>함수가 일급 객체라는 특징을 응용해서 변수에 함수를 할당할 수 있고, 다른 함수의 return값으로 함수를 사용할 수 있습니다. 고차함수는 return으로 다른 함수를 반환하거나, 호출할 때 다른 함수를 인수로 받는 함수입니다. 고차함수는 코드의 가독성을 높이고 디버깅을 더 편하게 하는 역할을 합니다. 고차함수의 인수로 다른 함수가 사용될 때, 해당 함수를 <a href="#callbackFunc">콜백함수</a>라고 합니다. 콜백함수는 실행 즉시 호출되는 것이 아니라 고차함수를 호출하는 과정에서 나중에 자동으로 호출됩니다.</p>
+            <pre>
+              <code>
+                const multiply = (x, y) => return x * y;
+                const plusTen = (a) => return a + 10;
+                
+                multiply(plusTen(2), 3); // 36
+
+                /* 
+                위 호출식은 아래와 같이 해석됩니다.
+                multiply(x = ((a = 2) + 10), y = 3);
+
+                multiply => 고차함수(higher-order func)
+                plusTen => 콜백함수(callback func)
+                */
+              </code>
+            </pre>
+            <div class="ex" id="callbackFunc">
+              <h3>콜백함수 Callback Function</h3>
+              <p>고차함수의 인수로 다른 함수가 사용될 때, 해당 함수를 콜백함수라고 합니다. 콜백함수는 고차함수가 호출된 뒤 고차함수의 실행 과정에서 특정 시점이 되면 나중에 실행됩니다.</p>
+            </div>
+          </section>
+        </article>      
         <article id="scope">
           <h1>스코프</h1>
           <p>스크립트 내의 모든 변수는 식별자가 어디에서 선언되었는지에 따라, 다른 코드가 해당 변수에 접근할 수 있는 일정한 범위를 가집니다. 이러한 규칙을 스코프(유효범위, scope)라 부릅니다. JavaScript에서 스코프는 스크립트 내 어느 위치에서든 변수에 접근할 수 있는 전역 스코프(global scope)와 블록문(block statement) 중에서 함수 안에서만 접근할 수 있는 지역 스코프(local scope)로 나뉩니다. 변수는 선언된 위치에 따라 스코프를 가지고, 스코프에 따라 전역 변수(global variable)와 지역 변수(local variable)로 나뉩니다.</p>
@@ -1282,37 +1580,34 @@
             <pre>
               <code>
                 function localScope() {
+                  let a = 0;
                   if (true) {
-                    var a = 0;
-                    for (var a = 1; a < 5; a++) {
-                      console.log("a는 " + a + " (for문)"); 
+                    let a = 1;
+                    for (let a = 2; a < 5; a++) {
+                      console.log(`a는 ${a} (for문)`); 
                     }
-                    console.log("a는 " + a + " (if문)"); 
+                    console.log(`a는 ${a} (if문)`); 
                   }
-                  console.log("a는 " + a + " (함수)"); 
+                  console.log(`a는 ${a} (함수)`); 
                 }
                 localScope();   
-                //a는 1, 2, 3, 4 (for문)   
-                //a는 5 (if문)          
-                //a는 5 (함수 localScope)
+                //a는 2, 3, 4 (for문)   
+                //a는 1 (if문)          
+                //a는 0 (함수)
                 /*
                 함수 안에 다른 블록문이 들어있어도
                 블록문과 함수 안에 선언된 변수는 모두 지역 변수입니다.
                 같은 스코프를 가진 변수이므로 서로 참조할 수 있습니다.
                 */</code>
             </pre>
-            <div class="question">
-              <span>Q1.</span><h4>코드 예제에서 <a href="#">반복문</a> 조건이 `a < 5`인데<br>왜 반복문 밖의 콘솔은 'a는 5'라고 나오나요?</h4>
-              <span>A1.</span><p>for문에서 1~4까지 결과값이 나왔고, for문의 마지막 계산 (a = 4, a++)에서 결과값은 a = 5 입니다.<br>a = 5이므로 더이상 for문의 콘솔은 실행되지 않지만, 아래 if문에서는 가장 마지막으로 선언된 a = 5 값을 참조하는 것입니다.<br>함수 또한 if문에서 참조한 a = 5 값을 그대로 참조한 것입니다.</p>
-            </div>
-            <div class="ex" id="functionScope">
+            <div class="ex" id="functioncope">
               <h3>함수레벨 스코프 Function-Level Scope</h3>
               <p>JavaScript에서, 함수 안에서 선언된 매개변수와 변수는 함수 밖에서는 유효하지 않습니다. 전역 스코프에서는 전역 변수만 참조할 수 있고 함수 내 지역 스코프에서는 지역 변수와 전역 변수를 모두 참조할 수 있습니다. 만약 전역변수와 지역변수가 같은 식별자로 중복 선언되었다면, 함수는 지역 변수를 우선 참조하여 결과값을 냅니다.</p>
               <pre>
                 <code>
-                var ceo = "Seon-Jung";
+                let ceo = "Seon-Jung";
                 function scopeFunc() {
-                  var ceo = "Ari";
+                  let ceo = "Ari";
                   console.log(ceo); 
                 }
                 scopeFunc(); // "Ari"
@@ -1322,7 +1617,7 @@
                 함수는 지역 변수를 우선 참조합니다.
                 */
 
-                var ceo = "Seon-Jung";
+                let ceo = "Seon-Jung";
                 function scopeFunc() {
                   ceo = "Ari";
                   console.log(ceo);
@@ -1339,9 +1634,9 @@
               <p>함수 안에 있는 다른 함수, 즉 내부 함수는 자신을 포함하고 있는 외부 함수의 변수에 접근할 수 있습니다.</p>
               <pre>
                 <code>
-                var ceo = "Seon-Jung";
+                let ceo = "Seon-Jung";
                 function scopeFunc2() {
-                  var ceo = "Ari";
+                  let ceo = "Ari";
                   console.log(ceo);
 
                   function scopeFunc3() {
@@ -1356,9 +1651,9 @@
                 외부 함수의 변수에 접근할 수 있습니다.
                 */
 
-                var ceo = "Seon-Jung";
+                let ceo = "Seon-Jung";
                 function scopeFunc2() {
-                  var ceo = "Ari";
+                  let ceo = "Ari";
                   console.log(ceo);
 
                   function scopeFunc3() {
@@ -1380,9 +1675,9 @@
               <p>블록문 안에 있지만 함수 안에 있지 않다면 JavaScript 에서는 전역 변수로 처리됩니다.</p>
               <pre>
                 <code>
-                var programmer = "HanSun"
+                let programmer = "HanSun"
                 if(true) {
-                  var programmer = "Yura";
+                  let programmer = "Yura";
                   console.log(programmer); // "Yura"
                 }
                 console.log(programmer); // "Yura"
@@ -1401,11 +1696,11 @@
                   if (true) {
                     let b = 0;
                     for (let b = 1; b < 5; b++) {
-                      console.log("b는 " + b + " (for문)"); //b는 1, 2, 3, 4 (for문)
+                      console.log(`b는 ${b} (for문)`); //b는 1, 2, 3, 4 (for문)
                     }
-                    console.log("b는 " + b + " (if문)"); //b는 0 (if문)
+                    console.log(`b는 ${b} (if문)`); //b는 0 (if문)
                   }
-                  console.log("b는 " + b + " (함수)"); //ReferenceError: b is not defined
+                  console.log(`b는 ${b} (함수)`); //ReferenceError: b is not defined
                 }
                 scopeBLock();
                 /*
@@ -1417,20 +1712,329 @@
               </pre>
             </div>
           </section>
-      <!--<article id="arrays">
-        <section id="">
-        </section>
-      </article>-->
-      <!--<article id="executionContext">
-        <section id="">
-        </section>
-      </article>-->
+        </article>
+        <article id="object">
+          <h1>객체</h1>
+          <p>객체(object)는 마치 컨테이너 박스처럼 한꺼번에 여러 값을 담을 수 있는 구조를 지닌 데이터 타입입니다. JavaScript의 객체는 키(이름)와 값으로 구성된 <a href="#property">프로퍼티(property)</a>의 집합입니다. 객체는 각각 데이터와 액션의 역할을 수행하는 프로퍼티와 메소드를 모두 포함할 수 있기 때문에 이들을 각각이 아닌 하나의 단위로 구조화할 수 있습니다.</p>
+          <pre>
+            <code>
+                const weather = {
+                  city: "Seoul"
+                  temperature: "20" + "℃"
+                  todayWeather: function() {
+                    console.log(this.city + " is " + this.temperature + " today.");
+                  }
+                }   
+                
+                /*
+                weather는 객체의 이름입니다.
+                weather의 프로퍼티는 city, temperature, todayWeather 이고
+                todayWeather는 메소드입니다.
+                */</code>
+          </pre>
+          <section id="property">
+            <h2>프로퍼티 Property</h2>
+            <p>프로퍼티는 객체에서 변수처럼 이름 붙여지는 객체의 데이터들입니다. 객체의 이름(name) 뒤에 .(점 연산자, dot operator)를 쓰고 프로퍼티를 붙입니다. JavaScript에서 사용할 수 있는 모든 값은 프로퍼티가 될 수 있습니다.</p>
+            <pre>
+              <code>
+                const weather = {
+                  city: "Seoul"
+                  temperature: "20" + "℃"
+                  todayWeather: function() {
+                    console.log(this.city + " is " + this.temperature + " today.");
+                  }
+                }   
+                
+                /*
+                프로퍼티는 객체의 데이터를 뜻합니다.
+                this 뒤에 weather의 프로퍼티가 사용되었습니다.
+                */</code>
+            </pre>
+          </section>
+          <section id="method">
+            <h2>메소드 Method</h2>
+            <p>객체에서 쓰이는 프로퍼티 값이 함수일 경우 일반 함수와 구분하기 위해 메소드라고 부릅니다. 메소드는 프로퍼티의 역할을 하기 때문에 프로퍼티처럼 객체의 이름 뒤에 .(점 연산자)를 쓴 뒤 메소드를 붙입니다.</p>
+            <pre>
+              <code>
+                const weather = {
+                  city: "Seoul"
+                  temperature: "20" + "℃"
+                  todayWeather: function() {
+                    console.log(this.city + " is " + this.temperature + " today.");
+                  }
+                }   
+                weather.todayWeather(); // "Seoul is 20℃ today."</code>
+            </pre>
+          </section>
+        </article>
+        <article id="array">
+          <h1>배열</h1>
+          <p>배열(array)은 하나의 변수에 여러 개의 값을 순차적으로 저장합니다. JavaScript에서 배열은 배열 타입의 <a href="#object">객체</a>입니다. 그렇지만 배열은 객체와 달리 프로퍼티 식별자가 없고, 배열 요소값(element)만 작성합니다.</p>
+          <pre>
+            <code>
+                let arr = [];
+                console.log(typeof arr); // object</code>
+          </pre>
+          <section id="arrayElement">
+            <h2>배열 요소 Array Elements</h2>
+            <p>배열은 0개 이상의 요소값을 쉼표로 구분해 대괄호[]로 묶습니다. 첫 번째 값은 <a href="#stringMethods">문자열</a>과 마찬가지로 index 0부터 읽을 수 있습니다. 존재하지 않는 요소에 접근하면 undefined값을 반환합니다. 배열 요소값으로 모든 데이터타입을 사용할 수 있습니다. 배열 요소로 다른 배열을 사용할 때 해당 배열 요소를 내부 배열(nested array)이라고 합니다.</p>
+            <pre>
+              <code>
+                let arr = [1, 2, 3, "four", "five", [1, 2, 3]];
+                console.log(arr[0]); // 1
+                console.log(arr[5]); // [1, 2, 3]
+                console.log(arr[6]); // undefined</code>
+            </pre>
+            <div class="ex" id="updateElements">
+              <h3>배열 요소 추가 Update Array Elements</h3>
+              <p>배열의 index에 값을 할당해서 원하는 순서에 요소를 추가할 수 있습니다. 값이 할당되지 않은 index 요소는 생성되지 않고, 참조하면 undefined를 반환합니다. 배열의 길이 .length는 마지막 index를 기준으로 정해집니다. index값은 length - 1 과 같으므로, index 위치에 length를 작성하면 배열의 마지막에 요소를 추가할 수 있습니다.</p>
+              <pre>
+                <code>
+                let arr = [];
+                console.log(arr[0]); // undefined
+
+                arr[1] = 1;
+                arr[3] = 3;
+                arr[arr.length] = 5;
+                console.log(arr); // (5)[empty, 1, empty, 3, 5]
+                console.log(arr.length); // 5
+                console.log(Object.keys(arr)); // ["1", "3", "5"]</code>
+              </pre>
+            </div>
+            <div class="ex" id="deleteElements">
+              <h3>배열 요소 삭제 Delete Array Elements</h3>
+              <p>배열의 요소를 삭제하기 위해 delete 연산자와 splice 메소드를 사용할 수 있습니다. delete 연산자를 사용하면 요소값만 삭제하고 요소위치는 유지되어 length값이 변하지 않습니다. splice 메소드를 사용하면 요소 위치까지 완전히 삭제하면서 length값이 변합니다.</p>
+              <pre>
+                <code>
+                let arr = [1, 2, 3, "four"];
+
+                delete arr[3]; // (4)[1, 2, 3, empty]
+                console.log(arr);
+
+                /* delete 연산자는 요소의 값만 삭제합니다. */
+
+
+                /* .splice(시작하는 index, 삭제할 요소 개수) */
+                arr.splice(3, 1); // (3)[1, 2, 3]
+                console.log(arr);
+
+                /* .splice 메소드는 요소의 위치까지 삭제합니다. */</code>
+              </pre>
+            </div>
+          </section>
+          <section id="arrayProperty">
+            <h2>배열 프로퍼티 Array Property</h2>
+            <div class="ex" id="arrayLength">
+              <h3>Array.length</h3>
+              <p>문자열의 길이를 구하는 것과 마찬가지로, 배열 요소의 index 개수를 length 프로퍼티로 구할 수 있습니다. length 프로퍼티 값을 기존 값보다 작게 변경하면 변경된 length 값보다 크거나 같은 index에 위치한 요소가 모두 삭제됩니다.</p>
+              <pre>
+                <code>
+                let arr = [1, 2, 3, 4, 5];
+                console.log(arr.legnth); // 5
+
+                arr.length = 3;
+                console.log(arr); // (3)[1, 2, 3]</code>
+              </pre>
+            </div>
+          </section>
+          <section id="arrayMethod">
+            <h2>배열 메소드 Array Method</h2>
+            <div class="ex" id="arrayIndexOfIncludes">
+              <h3>Array.indexOf(), Array.includes()</h3>
+              <p>배열 요소의 index값을 알아내기 위해 indexOf 메소드를 사용할 수 있습니다. 중복된 요소가 있는 경우 첫 번째 index만 반환하고, 해당 요소가 없다면 -1 index를 반환합니다. includes 메소드는 배열 요소가 배열에 포함되는지의 여부를 진리값으로 반환합니다.</p>
+              <pre>
+                <code>
+                let arr = [1, 2, 3, 3, "four", "five", "six"];
+                console.log(arr.indexOf("six")); // 6
+                console.log(arr.indexOf(3)); // 2
+                console.log(arr.indexOf("ten")); // -1
+                console.log(arr.includes("six")); // true</code>
+              </pre>
+            </div>
+            <div class="ex" id="arrayConcatPushUnshiftSplice">
+              <h3>Array.concat(), Array.push(), Array.unshift(), Array.splice()</h3>
+              <p>concat메소드는 인수를 원본 배열이 아닌 배열 복사본의 마지막에 추가하고, 복사본을 반환합니다.</p>
+              <pre>
+                <code>
+                let arr = [1, 2, 3, 4, 5];
+                console.log(arr.concat(6, 7)); // (7)[1, 2, 3, 4, 5, 6, 7]
+                console.log(arr); // (5)[1, 2, 3, 4, 5]
+
+                /* concat 메소드는 배열의 복사본을 반환합니다. */</code>
+              </pre>
+              <p>이와 달리 push, unshift, splice 메소드는 원본 배열을 직접 변경한 뒤 변경된 배열의 length값을 반환합니다. 배열의 마지막에 추가할 때는 push, 맨 앞에 추가할 때는 unshift, 중간에 추가할 때는 splice 메소드를 사용합니다. 다만, push, unshift 메소드는 concat 메소드, length로 요소를 추가하는 방법보다 성능이 더 낮습니다.</p>
+              <pre>
+                <code>
+                let arr = [1, 2];
+                console.log(arr.push(3, 4)); // 4
+                console.log(arr); // (4)[1, 2, 3, 4]
+
+                console.log(arr.unshift(5, 6)); // 6
+                console.log(arr); // (6)[1, 2, 3, 4, 5, 6]
+
+                /* push, unshift 메소드는 원본 배열의 length값을 변경시킵니다. */
+
+
+                console.log(arr.splice(3, 0, 10)); // []
+                console.log(arr); // (7)[1, 2, 3, 10, 4, 5, 6];
+
+                /* 
+                splice 메소드로 배열 중간에 요소를 추가하거나 제거할 수 있습니다.
+                (index, 제거할 요소 개수, 추가할 요소) 
+                */
+
+
+                arr[arr.length] = 100
+                console.log(arr); // (8)[1, 2, 3, 10, 4, 5, 6, 100];
+
+                console.log([-1].concat(arr)); // (9)[-1, 1, 2, 3, 10, 4, 5, 6];
+                console.log(arr); // (8)[1, 2, 3, 10, 4, 5, 6, 100];
+
+                /* 성능을 고려할 때는 length, concat을 사용하는 것이 좋습니다. */</code>
+              </pre>
+            </div>
+            <div class="ex" id="arrayPopShift">
+              <h3>Array.pop(), Array.shift()</h3>
+              <p>pop, shift 메소드는 배열의 원본 배열을 직접 변경한 뒤 제거한 요소를 반환합니다. 배열의 마지막 요소를 제거할 때는 pop, 맨 앞의 요소를 제거할 때는 shift 메소드를 사용합니다.</p>
+              <pre>
+                <code>
+                let arr = [1, 2, 3, 4, 5];
+                console.log(arr.pop()); // 5
+                console.log(arr); // (4)[1, 2, 3, 4]
+                console.log(arr.shift()); // 1
+                console.log(arr); // (3)[2, 3, 4]
+
+                /* pop, shift 메소드는 원본 배열에서 제거한 요소를 반환합니다. */</code>
+              </pre>
+            </div>
+            <div class="ex" id="arrayJoin">
+              <h3>Array.join()</h3>
+              <p>join 메소드는 배열 요소를 전체로 연결해 생성한 문자열을 반환합니다. join 메소드는 add 연산자보다 빠릅니다.</p>
+              <pre>
+                <code>
+                let arr = [1, 2, 3, 4, 5];
+                console.log(arr.join()); // "1,2,3,4,5"
+                console.log(arr.join("")); // "12345"
+                console.log(arr.join(":")); // "1:2:3:4:5"</code>
+              </pre>
+            </div>
+            <div class="ex" id="arraySlice">
+              <h3>Array.slice()</h3>
+              <p>slice 메소드는 인수로 지정된 배열의 부분을 다른 배열로 복사한 뒤 반환합니다.</p>
+              <pre>
+                <code>
+                let arr = [1, 2, 3, 4, 5];
+                console.log(arr.slice()); // [1, 2, 3, 4, 5]
+                console.log(arr.slice(1, 2)); // [2]
+                console.log(arr.slice(1, 4)); // [2, 3, 4]
+                console.log(arr.slice(1)); // [2, 3, 4, 5]
+                console.log(arr.slice(-1)); // [5]
+                /* 
+                slice 메소드로 배열 요소를 중간부터 복사해서 배열로 반환합니다.
+                (indexA, indexB - 1) 
+                인수가 음수라면 배열의 끝에서부터 요소를 반환합니다.
+                (-index)
+                */</code>
+              </pre>
+            </div>
+            <div class="ex" id="arrayReverse">
+              <h3>Array.reverse()</h3>
+              <p>reverse 메소드는 원본 배열 요소 순서를 반대로 변경한 후 변경된 원본 배열을 반환합니다.</p>
+              <pre>
+                <code>
+                let arr = [1, 2, 3, 4, 5];
+                console.log(arr.reverse()); // [5, 4, 3, 2, 1]</code>
+              </pre>
+            </div>
+          </section>
+          <section id="arrayIterator">
+            <h2>배열 순회 메소드 Array Iterator</h2>
+            <p>일반 <a href="#loopStm">반복문</a>처럼, 배열 요소를 순회해서 반환하고 싶을 때 배열 순회 메소드를 사용합니다.</p>
+            <div class="ex" id="arrayForEach">
+              <h3>Array.forEach()</h3>
+              <p>forEach 메소드는 배열 요소를 순회하며 순서대로 반환합니다. forEach 메소드 안에 <a href="#callbackFunc">콜백 함수</a>를 넣어 배열요소를 이용한 함수를 실행합니다.</p>
+              <pre>
+                <code>
+                let arr = [1, 2, 3];
+
+                const arr2 = arr.forEach(items => console.log(items));
+                // 1
+                // 2
+                // 3
+
+                /* 위의 함수표현식은 아래와 같습니다. */
+
+                const arr2 = (items) => console.log(items);
+                arr.forEach(arr2);
+
+
+
+                const arr3 = arr.forEach(items => items);
+                console.log(arr3); // undefined 
+
+                /* 
+                forEach 메소드는
+                새로운 배열을 생성하지 않습니다. 
+                */</code>
+              </pre>
+            </div>
+            <div class="ex" id="arrayMap">
+              <h3>Array.map()</h3>
+              <p>map 메소드는 배열 요소를 순회하며 순서대로 새로운 배열로 반환합니다. 원본 배열을 반환하는 forEach 메소드와 달리, map 메소드는 원본 배열에 영향을 주지 않습니다.</p>
+              <pre>
+                <code>
+                let arr = [1, 2, 3];
+
+                const arr2 = arr.map(items => console.log(items));
+
+                // 1
+                // 2
+                // 3
+
+                /* 위의 함수표현식은 아래와 같습니다. */
+
+                const arr2 = (items) => console.log(items);
+                arr.map(arr2);
+
+
+
+                const arr3 = arr.map(items => items);
+                console.log(arr3); // (3)[1, 2, 3] 
+
+                /* 
+                map 메소드는 원본 배열과 다른
+                새로운 배열을 생성합니다. 
+                */</code>
+              </pre>
+            </div>
+            <div class="ex" id="arrayFilter">
+              <h3>Array.filter()</h3>
+              <p>filter 메소드는 배열 요소 중 특정 조건에 true값을 반환하는 요소들을 골라 순서대로 새로운 배열로 반환합니다. map 메소드와 마찬가지로 원본 배열에 영향을 주지 않습니다.</p>
+              <pre>
+                <code>
+                let arr = [1, 2, 3];
+
+                const arr2 = arr.filter(items => {
+                  return items < 3;
+                });
+
+                // 1
+                // 2
+
+                console.log(arr2); // (2)[1, 2] 
+
+                /* 
+                filter 메소드는 원본 배열과 다른
+                새로운 배열을 생성합니다. 
+                */</code>
+              </pre>
+            </div>
+          </section>
+        </article> 
       </main>
       <footer>
-        <div class="footer-contents">
-          <p>Referenced by Codecademy, MDN, and StackOverflow<br>
+        <p>Referenced by Codecademy, MDN, and StackOverflow<br>
           Written & Edited by Lee Ujin</p>
-        </div>
       </footer>
     </div>
   </body>

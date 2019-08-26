@@ -1,0 +1,50 @@
+/* 
+file: variables.scss
+author: Lee Eo-jin
+*/
+
+/* 
+width
+*/
+$nav-width: 200px;
+
+/* 
+spacing
+*/
+$base-spacing: 1.8em;
+$small-spacing: 1.6em;
+$tiny-spacing: 1.12em;
+$medium-spacing: 3em;
+$big-spacing: 6em;
+$huge-spacing: 9em;
+$header-spacing: 44px;
+
+/* 
+typography
+*/
+$base-font-family: "Apple SD Gothic Neo", AppleSDGothicNeo, "Noto Sans KR", NanumGothic, "Malgun Gothic", "맑은 고딕", 돋움, dotum, arial, sans-serif;
+$code-font-family: consolas, "맑은 고딕", "Malgun Gothic", monospace;
+
+$base-font-size: 1.64em;
+$small-font-size: 1.46em;
+$medium-font-size: 2em;
+$big-font-size: 2.8em;
+$huge-font-size: 4.2em;
+
+$base-line-height: 1.86;
+$small-line-height: 1.6;
+$little-line-height: 1.46;
+$tiny-line-height: 1.1;
+
+/* 
+colors
+*/
+$dark-gray: #232323;
+$medium-gray: #767676;
+$light-gray: #dddddd;
+$snow-white: #f2f2f2;
+$white: #ffffff;
+
+$action-color: #4d4ddd;
+$nav-bg: #f0f6ff;
+$code-bg: #30303f;

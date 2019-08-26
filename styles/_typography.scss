@@ -1,0 +1,114 @@
+/* 
+default
+*/
+$mobile: 380px;
+$tablet: 760px;
+$desktop: 1000px;
+
+body {
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+    color: $dark-gray;
+    font-size: 10px;
+    font-family: $base-font-family;
+    line-height: $base-line-height;
+    word-break: keep-all;
+    word-spacing: .03em;
+}
+h1,
+h4,
+h5,
+h6 {
+    font-weight: 400;
+}
+h1 {
+    font-size: $huge-font-size;
+    line-height: $tiny-line-height;
+    letter-spacing: -0.012em;
+}
+h2 {
+    font-size: $big-font-size;
+    line-height: $little-line-height;
+}
+h3 {
+	font-size: $medium-font-size;
+	line-height: $tiny-line-height;
+}
+ul, 
+ol {
+	margin: 2.2em 0;
+}
+ul {
+	padding: 0;
+	list-style: none;
+}
+ol {
+	padding: 0 0 $base-spacing $base-spacing;
+}
+p, 
+li, 
+span {
+	font-size: $base-font-size;
+	line-height: $base-line-height;
+}
+a {
+    color: $dark-gray;
+    text-decoration: none;
+    border-bottom: 2px solid $action-color;
+    transition: color 0.3s linear;
+    &:hover,
+    &:active {
+        color: $action-color;
+    }
+}
+
+/* 
+header
+*/
+#home {
+    font-weight: 700;
+	font-size: $small-font-size;
+	color: $white;
+    border: none;
+    padding-left: $tiny-spacing;
+}
+
+/* 
+main
+*/
+code {
+    position: relative;
+    top: -6px;
+    left: -105px;
+    right: 0;
+    bottom: 0;
+    font-family: $code-font-family;
+    font-size: $small-font-size;
+    line-height: $small-line-height;
+    color: $light-gray;
+}
+.ex {
+    color: $dark-gray;
+}
+
+/* 
+navigation
+*/
+nav > ul > li {
+    a {
+        border: none;
+    }
+}
+.menu-top > a {
+    font-weight: 700;
+}
+
+/* 
+footer
+*/
+footer > p {
+    color: $medium-gray;
+	font-size: $small-font-size;
+    line-height: $base-line-height;
+    padding: 0 $base-spacing;
+}

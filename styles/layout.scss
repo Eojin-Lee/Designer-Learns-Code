@@ -1,0 +1,85 @@
+@charset "utf-8";
+	 
+/* 
+file:  layout.css
+author:  Lee Eo-jin
+css order:  id > tag & class > class > tag
+css selector order:  type > layout > class > others
+css property order:  (top,  right,  bottom,  left)
+*/
+
+@import "variables";
+@import "typography";
+
+/* 
+header
+*/
+header {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 11;
+	height: 44px;
+	padding-right: $nav-width;
+	background-color: $action-color;
+	box-shadow: 1px 2px 6px rgba(0, 0, 0, .3);
+}
+.header-wrapper {
+	max-width: $tablet;
+	margin: 6px auto;
+}
+
+/*
+main, footer
+*/
+.main-content, 
+footer {
+	max-width: $tablet;
+	min-width: $mobile;
+	margin: $header-spacing auto;
+}
+.main-wrapper {
+	margin-right: $nav-width;
+	padding-right: 4.5em;
+}
+article {
+	padding: $huge-spacing 4em;
+	border-bottom: 1.8px solid $light-gray;
+}
+section {
+	padding-top: $big-spacing;
+}
+pre {
+	display: block;
+	overflow: auto hidden;
+	margin-bottom: $medium-spacing;
+	border-left: 6px solid $medium-gray;
+	background-color: $code-bg;
+}
+.ex {
+	margin: $medium-spacing 0;
+	padding: $medium-spacing;
+	border-radius: 1.6em;
+	box-shadow: 0 0 8px rgba(0, 0, 0, .1);
+}
+
+/*
+navigation
+*/
+nav {
+	position: fixed;
+	top: 44px;
+	right: 0;
+	bottom: 0;
+	left: auto;
+	overflow-y: auto;
+	z-index: 1;
+	width: $nav-width;
+	padding: $medium-spacing 0 $medium-spacing $header-spacing;
+	background-color: $nav-bg;
+}
+.menu-top {
+	margin-top: $tiny-spacing;
+}

@@ -31,7 +31,7 @@ body {
   color: #232323;
   font-size: 10px;
   font-family: "Apple SD Gothic Neo", AppleSDGothicNeo, "Noto Sans KR", NanumGothic, "Malgun Gothic", "맑은 고딕", 돋움, dotum, arial, sans-serif;
-  line-height: 1.86;
+  line-height: 1.82;
   word-break: keep-all;
   word-spacing: .03em; }
 
@@ -43,16 +43,16 @@ h6 {
 
 h1 {
   font-size: 4.2em;
-  line-height: 1.1;
+  line-height: 0.7;
   letter-spacing: -0.012em; }
 
 h2 {
   font-size: 2.8em;
-  line-height: 1.46; }
+  line-height: 1.34; }
 
 h3 {
   font-size: 2em;
-  line-height: 1.1; }
+  line-height: 0.7; }
 
 ul,
 ol {
@@ -68,8 +68,8 @@ ol {
 p,
 li,
 span {
-  font-size: 1.64em;
-  line-height: 1.86; }
+  font-size: 1.75em;
+  line-height: 1.82; }
 
 a {
   color: #232323;
@@ -84,7 +84,7 @@ header
 */
 #home {
   font-weight: 700;
-  font-size: 1.46em;
+  font-size: 1.75em;
   color: #ffffff;
   border: none;
   padding-left: 1.12em; }
@@ -121,7 +121,7 @@ footer
 footer > p {
   color: #767676;
   font-size: 1.46em;
-  line-height: 1.86;
+  line-height: 1.82;
   padding: 0 1.8em; }
 
 /* 

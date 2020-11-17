@@ -1,0 +1,84 @@
+body {
+    font-size: 16px;/*body에 기준px값을 적는다.*/
+}
+table {
+    position: relative;
+    width: 100%;
+    margin: 2em auto;
+    padding: 0.5em;
+    border: 2px solid black;
+    border-collapse: collapse;/*border space 값을 없앤다.*/
+    border-spacing: 0;
+}
+caption {
+    padding: 1em;
+    font-size: 1.3em;
+    font-weight: 700;
+}
+.table-easy td, .table-easy th {
+    border: 1px solid lightgray;
+    text-align: center;
+}
+.table-hard td, .table-hard th {
+    margin: 0;
+    padding: 0.25em;
+    text-align: left;
+    vertical-align: text-top;
+    border: 1px solid lightgray;
+}
+.table-hard col {
+    border: 1px solid black;
+}
+.table-hard th {
+    background-color: black;
+    color: white;
+    font-weight: 400;
+    border: 1px solid white;
+}
+form {
+    margin: 4em auto;
+}
+fieldset {
+    margin-bottom: 2em;
+    padding: 1.6em 1.4em;
+    border: 2px solid lightgray;
+}
+legend {
+    font-size: 1em;
+    font-weight: 400;
+    color: #666;
+    padding: 0;
+}
+input, textarea {
+    margin-bottom: 2em;
+    margin-right: 1.4em;
+    padding: 0.6em;
+}
+select {
+    padding: 0.2em 0.3em;
+}
+h1 {
+    margin-left: 1.1em;
+    font-size: 1.4em;
+    line-height: 1.4em;
+}
+h2 {
+    font-size: 1em;
+    font-weight: 700;
+    line-height: 0.6em;
+}
+button {
+    margin-left: 1.4em;
+    font-size: 1.1em;
+    font-weight: 700;
+    padding: 0.6em 1.6em;
+    border: 2px solid lightgray;
+    border-radius: 0.2em;
+}
+button:last-child {
+    margin-left: 0;
+    background-color: black;
+    color: white;
+    border: 2px solid black;
+}
+        

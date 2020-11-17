@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko"><!--lang은 head가 아니라 html 태그 옆에 붙인다.-->
+    <head>
+        <meta charset="utf-8"><!--meta 태그는 head에 넣는다.-->
+        <title>styling practice</title><!--title을 꼭 넣어주자.-->
+        <link rel="stylesheet" type="text/css" href="styles/styling.css">
+    </head>
+    <body>
+        <section class="table-practice">
+            <table class="table-easy">
+                <caption>테이블 기초 연습 (row-col)</caption>
+                <thead><!--th는 테이블 헤더 셀에 쓴다. bold, align centered 되어있다.-->
+                    <tr>
+                        <th>1-a</th>
+                        <th>1-b</th>
+                        <th>1-c</th>
+                    </tr>
+                </thead>
+                <tbody><!--tr이 가로행, td가 셀. colspan: 가로병합, rowspan: 세로병합-->
+                    <tr>
+                        <td rowspan="2">2-a, 3-a</td>
+                        <td>2-b</td>
+                        <td>2-c</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">3-b, 3-c</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">4-a, 4-b, 4-c</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3">Sum</td>
+                    </tr>
+                </tfoot>
+            </table>
+            <table class="table-hard">
+                <caption>테이블 응용 연습 (row-col)</caption>
+                <colgroup><!--colunm의 길이를 지정한다.-->
+                    <col width="20%">
+                    <col width="10%">
+                    <col width="30%">
+                    <col width="30%">
+                    <col width="10%">
+                </colgroup>
+                <thead>  
+                    <tr><!--scope, id로 데이터의 속성을 표시한다. (스크린리더기 접근성)-->
+                        <th rowspan="2" scope="col" id="grade">Grade</th>
+                        <th rowspan="2" scope="col" id="point">Point</th>
+                        <th colspan="2" scope="colgroup" id="strength">Strength</th>
+                        <th rowspan="2" scope="col" id="percent">Percent</th>
+                    </tr>
+                    <tr>
+                        <th scope="col" id="kg/mm">kg/mm</th>
+                        <th scope="col" id="lb/in">lb/in</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><!--headers로 관련된 id를 연결시킨다.-->
+                        <td scope="row" headers="grade">Hard</td>
+                        <td scope="row" headers="point">0.45</td>
+                        <td scope="row" headers="strength kg/mm">56.2</td>
+                        <td scope="row" headers="strength lb/in">80,000</td>
+                        <td scope="row" headers="percent">20</td>
+                    </tr>
+                    <tr>
+                        <td scope="row" headers="grade">Medium</td>
+                        <td scope="row" headers="point">0.45</td>
+                        <td scope="row" headers="strength kg/mm">49.2</td>
+                        <td scope="row" headers="strength lb/in">70,000</td>
+                        <td scope="row" headers="percent">25</td>
+                    </tr>
+                    <tr>
+                        <td scope="row" headers="grade">Soft</td>
+                        <td scope="row" headers="point">0.45</td>
+                        <td scope="row" headers="strength kg/mm">42.2</td>
+                        <td scope="row" headers="strength lb/in">60,000</td>
+                        <td scope="row" headers="percent">30</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="form-practice">
+            <form action="">
+                <h1>회원가입</h1>
+                <fieldset><!--폼 요소 그룹-->
+                    <legend>계정 정보</legend><!--폼 요소 제목-->
+                    <h2><label for="userid">아이디</label></h2><input type="text" placeholder="10자 이내의 영문" id="userid"><br>
+                    <h2><label for="userpw">비밀번호</label></h2><input type="password" id="userpw"><br>
+                    <h2><label for="birthday">생년월일</label></h2><input type="date" id="birthday" value="1995-12-31" min="1900-01-01" max="2020-01-01"><br>
+                    <h2>성별</h2><label for="male">남성</label><input type="radio" name="gender" id="male"><label for="female">여성</label><input type="radio" name="gender" id="female" checked>
+                </fieldset>
+                <fieldset>
+                    <legend>추가 정보</legend>
+                    <h2>프로필 사진 업로드</h2><input type="file" style="margin-left:-0.6em;"><br>
+                    <h2>자기소개</h2><textarea cols="40" rows="5" placeholder="친구들에게 나를 소개해요"></textarea><br>
+                    <h2>관심있는 분야</h2> 동물<input type="checkbox" name="like" checked>여행<input type="checkbox" name="like">음악<input type="checkbox" name="like" checked><br>
+                    <h2>거주 지역</h2> 
+                    <select>
+                        <option>서울</option>
+                        <option>부산</option>
+                        <option selected>제주</option>                    
+                    </select><br>
+                </fieldset>
+                <button type="reset">취소</button>
+                <button type="submit">가입하기</button>
+            </form>
+        </section>
+    </body>
+</html>

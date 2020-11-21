@@ -1,18 +1,24 @@
 body {
     font-size: 16px;/*body에 기준px값을 적는다.*/
+    /*em: font size of the element, rem: font size of the root element, vw: 1% of viewport's width*/
+    /*px: 1/96 of 1 in, pt: 1/72 of 1 in*/
 }
-table {
+section {
     position: relative;
     width: 100%;
-    margin: 2em auto;
-    padding: 0.5em;
+    margin-bottom: 4rem;
+}
+table {
+    width: 100%;
+    margin: 2rem auto;
+    padding: 0.5rem;
     border: 2px solid black;
     border-collapse: collapse;/*border space 값을 없앤다.*/
     border-spacing: 0;
 }
 caption {
-    padding: 1em;
-    font-size: 1.3em;
+    padding: 1rem;
+    font-size: 1.3rem;
     font-weight: 700;
 }
 .table-easy td, .table-easy th {
@@ -21,7 +27,7 @@ caption {
 }
 .table-hard td, .table-hard th {
     margin: 0;
-    padding: 0.25em;
+    padding: 0.25rem;
     text-align: left;
     vertical-align: text-top;
     border: 1px solid lightgray;
@@ -36,44 +42,44 @@ caption {
     border: 1px solid white;
 }
 form {
-    margin: 4em auto;
+    margin: 4rem auto;
 }
 fieldset {
-    margin-bottom: 2em;
-    padding: 1.6em 1.4em;
+    margin-bottom: 2rem;
+    padding: 1.6rem 1.4rem;
     border: 2px solid lightgray;
 }
 legend {
-    font-size: 1em;
+    font-size: 1rem;
     font-weight: 400;
     color: #666;
     padding: 0;
 }
 input, textarea {
-    margin-bottom: 2em;
-    margin-right: 1.4em;
-    padding: 0.6em;
+    margin-bottom: 2rem;
+    margin-right: 1.4rem;
+    padding: 0.6rem;
 }
 select {
-    padding: 0.2em 0.3em;
+    padding: 0.2rem 0.3rem;
 }
 h1 {
-    margin-left: 1.1em;
-    font-size: 1.4em;
-    line-height: 1.4em;
+    margin-left: 1.1rem;
+    font-size: 1.4rem;
+    line-height: 1.4rem;
 }
 h2 {
-    font-size: 1em;
+    font-size: 1rem;
     font-weight: 700;
-    line-height: 0.6em;
+    line-height: 0.6rem;
 }
 button {
-    margin-left: 1.4em;
-    font-size: 1.1em;
+    margin-left: 1.4rem;
+    font-size: 1.1rem;
     font-weight: 700;
-    padding: 0.6em 1.6em;
+    padding: 0.6rem 1.6rem;
     border: 2px solid lightgray;
-    border-radius: 0.2em;
+    border-radius: 0.2rem;
 }
 button:last-child {
     margin-left: 0;
@@ -81,4 +87,50 @@ button:last-child {
     color: white;
     border: 2px solid black;
 }
+.designers-link {
+    margin: 0;
+    padding: 0.4rem;
+}
+.designers-link li {
+    display: inline-block;
+    margin-left: 0;
+    padding: 0.6rem;
+    list-style: none;
+}
+a {
+    padding: 0.6rem 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: white;
+    background-color: deeppink;
+    border-radius: 5px;
+}
+a:active {
+    background-color: rebeccapurple;
+}
+a:visited {
+    background-color: gray;
+}
+a:focus, a:hover {
+    background-color: darkviolet;
+}
+.wrap {
+    margin: 1rem;
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: center;
+    border: 1px solid darkorange;
+}
+.border {
+    background-color: yellow;
+}
+.margin, .padding {
+    background-color: lightgrey;
+}
+.content {
+    background-color: white;
+    border: 1px dashed darkorange;
+}
+
         
